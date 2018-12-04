@@ -31,7 +31,7 @@ public class Sumador {
     }
     
     public static ArrayList<Double> addRows(ArrayList<Double> row, ArrayList<Double> adding){
-        if(row.size() != adding.size()){
+        if(diferentSizeElement(row, adding)){
             throw new NumberFormatException("Addition with different size of array.");
         }
         
@@ -45,7 +45,7 @@ public class Sumador {
     }
     
     public static ArrayList<Double> subRows(ArrayList<Double> row, ArrayList<Double> substracting){
-        if(row.size() != substracting.size()){
+        if(diferentSizeElement(row, substracting)){
             throw new NumberFormatException("Addition with different size of array.");
         }
         
@@ -60,6 +60,10 @@ public class Sumador {
     
     private boolean diferentSizeMatriz(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
         return matrixA.size() != matrixB.size() || matrixA.get(0).size() != matrixB.get(0).size();
+    }
+    
+    private static boolean diferentSizeElement(ArrayList<Double> row, ArrayList<Double> substracting){
+        return row.size() != substracting.size();
     }
 }
 
