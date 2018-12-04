@@ -234,14 +234,7 @@ public class MatrizDoble extends javax.swing.JFrame {
             }
             
             matriz.add(numeros);
-            
-            
-            
-            
-                
-                
-                
-           
+  
         }
         }catch(Exception e){
         
@@ -263,37 +256,25 @@ public class MatrizDoble extends javax.swing.JFrame {
             }
             
             matriz2.add(numeros);
-            
-            
-            
-            
-                
-                
-                
-           
+  
         }
         }catch(Exception e){
         
         
         }
         
+        ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
         if(this.tipo.equals("Multiplicacion Matricial")){
             MultMatricial mulMatricial = new MultMatricial();
-            ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
             matrizFinal = mulMatricial.multMatricial(matriz, matriz2);
             ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
             resultado.setVisible(true);
-            
-            
-            
-            
+                  
         } else if(this.tipo.equals("Suma de Matrices")){
             Sumador sumador = new Sumador();
-            ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
             matrizFinal = sumador.sumarMatrices(matriz, matriz2);
             ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-            
-            resultado.setVisible(true);
+            resultado.setVisible(true); 
             System.out.println(matrizFinal);
         }
     }//GEN-LAST:event_jButtonAceptarActionPerformed
@@ -333,6 +314,7 @@ public class MatrizDoble extends javax.swing.JFrame {
         });
     }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonAplicar;
