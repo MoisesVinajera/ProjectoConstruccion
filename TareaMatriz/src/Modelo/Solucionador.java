@@ -24,7 +24,7 @@ public class Solucionador {
         }
         
         //Se evalúa si el sistema tiene solución.
-        if(copia.size()!= copia.get(0).size()){
+        if(notSquaredMatrix(copia)){
             System.out.println(copia.size());
             System.out.println(copia.get(0).size());
             throw new NumberFormatException("La matriz de incógnitas no es cuadrada. "
@@ -61,5 +61,7 @@ public class Solucionador {
     }
     
     // al aplicar la metrica se obtiene que ((2+2+2)+(0+0))=6
-    
+    private boolean notSquaredMatrix(ArrayList<ArrayList<Double>> matrix){
+        return matrix.size()!= matrix.get(0).size();
+    }
 }
