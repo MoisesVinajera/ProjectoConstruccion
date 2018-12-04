@@ -20,7 +20,7 @@ public class Determinante {
         //1+max(0+0+(4))
         //5
     public double determinante(ArrayList<ArrayList<Double>> matrix){
-        if(notSquaredMatrix(matrix)){
+        if(!Utilidades.isSquaredDoubleMatrix(matrix)){
             throw new NumberFormatException("La matriz no es cuadrada.");
         }
         int grado = matrix.size();
@@ -45,7 +45,4 @@ public class Determinante {
         return resultado;
     }
     
-    public boolean notSquaredMatrix(ArrayList<ArrayList<Double>> matrix){
-        return !Utilidades.isSquaredDoubleMatrix(matrix);
-    }
 }

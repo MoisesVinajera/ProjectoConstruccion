@@ -9,11 +9,11 @@ import java.util.ArrayList;
 public class Inversor {
     
     public ArrayList<ArrayList<Double>> invertir(ArrayList<ArrayList<Double>> matrix){        
-        if(notSquaredMatrix(matrix)){
+        if(!Utilidades.isSquaredDoubleMatrix(matrix)){
             throw new NumberFormatException("La matriz no es cuadrada.");
         }
          
-        if(isDeterminatCero(matrix)){
+        if(Utilidades.isDeterminatCero(matrix)){
             throw new NumberFormatException("La matriz no tiene inversa.");
         }
         
@@ -56,13 +56,5 @@ public class Inversor {
         
         return matrix;
     }
-    
-    private boolean notSquaredMatrix(ArrayList<ArrayList<Double>> matrix){
-        return matrix.size()!= matrix.get(0).size();
-    }
 
-    private boolean isDeterminatCero(ArrayList<ArrayList<Double>> matrix){
-        Determinante det = new Determinante();
-        return det.determinante(matrix) == 0;
-    }
 }

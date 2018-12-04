@@ -18,7 +18,7 @@ public class Sumador {
         //se obtiene min(1,1,1)
         
         //usando la metrica se obtienen los siguientes numeros de aristas 1+2+1+1+1+2+1-n
-        if(diferentSizeMatriz(matrixA,matrixB)){
+        if(Utilidades.diferentSizeMatriz(matrixA,matrixB)){
             throw new NumberFormatException("Las matrices son de distinto tamaño.");
         }
         
@@ -31,7 +31,7 @@ public class Sumador {
     }
     
     public static ArrayList<Double> addRows(ArrayList<Double> row, ArrayList<Double> adding){
-        if(diferentSizeElement(row, adding)){
+        if(Utilidades.diferentSizeElement(row, adding)){
             throw new NumberFormatException("Addition with different size of array.");
         }
         
@@ -45,7 +45,7 @@ public class Sumador {
     }
     
     public static ArrayList<Double> subRows(ArrayList<Double> row, ArrayList<Double> substracting){
-        if(diferentSizeElement(row, substracting)){
+        if(Utilidades.diferentSizeElement(row, substracting)){
             throw new NumberFormatException("Addition with different size of array.");
         }
         
@@ -58,12 +58,6 @@ public class Sumador {
         return result;
     }
     
-    private boolean diferentSizeMatriz(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
-        return matrixA.size() != matrixB.size() || matrixA.get(0).size() != matrixB.get(0).size();
-    }
-    
-    private static boolean diferentSizeElement(ArrayList<Double> row, ArrayList<Double> substracting){
-        return row.size() != substracting.size();
-    }
+
 }
 

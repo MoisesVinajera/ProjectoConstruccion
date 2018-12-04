@@ -24,14 +24,14 @@ public class Solucionador {
         }
         
         //Se evalúa si el sistema tiene solución.
-        if(notSquaredMatrix(copia)){
+        if(!Utilidades.isSquaredDoubleMatrix(copia)){
             System.out.println(copia.size());
             System.out.println(copia.get(0).size());
             throw new NumberFormatException("La matriz de incógnitas no es cuadrada. "
                     + "El sistema no tiene solución.");
         }
         
-        if(isDeterminatCero(copia)){
+        if(Utilidades.isDeterminatCero(copia)){
             throw new NumberFormatException("La matriz no tiene inversa. "
                     + "El sistema no tiene solución.");
         }
@@ -60,12 +60,5 @@ public class Solucionador {
     }
     
     // al aplicar la metrica se obtiene que ((2+2+2)+(0+0))=6
-    private boolean notSquaredMatrix(ArrayList<ArrayList<Double>> matrix){
-        return matrix.size()!= matrix.get(0).size();
-    }
-    
-    private boolean isDeterminatCero(ArrayList<ArrayList<Double>> matrix){
-        Determinante det = new Determinante();
-        return det.determinante(matrix) == 0;
-    }
+
 }

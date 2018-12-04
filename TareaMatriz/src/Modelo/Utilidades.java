@@ -26,7 +26,6 @@ public class Utilidades {
         
         return entero;
         
-       
     }
     
     
@@ -130,5 +129,22 @@ public class Utilidades {
             }
             System.out.println("");
         }
+    }
+    
+    public static boolean isDeterminatCero(ArrayList<ArrayList<Double>> matrix){
+        Determinante det = new Determinante();
+        return det.determinante(matrix) == 0;
+    }
+    
+    public static boolean areDiferentSizeColumnARowB(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
+        return matrizA.get(0).size() != matrizB.size();
+    }
+    
+    public static boolean diferentSizeMatriz(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
+        return matrixA.size() != matrixB.size() || matrixA.get(0).size() != matrixB.get(0).size();
+    }
+    
+    public static boolean diferentSizeElement(ArrayList<Double> row, ArrayList<Double> substracting){
+        return row.size() != substracting.size();
     }
 }
