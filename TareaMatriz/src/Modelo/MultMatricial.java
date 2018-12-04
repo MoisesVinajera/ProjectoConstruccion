@@ -19,7 +19,7 @@ public class MultMatricial {
         // para medir la cantidad de nodos n(f1, f2(f3)) = n(f1) + n(f2(f3))-2 + 1
         //n(f1) = 4
     public ArrayList<ArrayList<Double>> multMatricial(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
-        if(matrizA.get(0).size() != matrizB.size()){
+        if(areDiferentSizeColumnARowB(matrizA,matrizB)){
             throw new NumberFormatException("Multiplicación imposible, los tamaños no coinciden.");
         }
         //n(f3) = 3, n(f2) = 4
@@ -37,5 +37,9 @@ public class MultMatricial {
         }
         
         return resultado;
+    }
+    
+    private boolean areDiferentSizeColumnARowB(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
+        return matrizA.get(0).size() != matrizB.size();
     }
 }
