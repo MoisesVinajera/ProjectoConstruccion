@@ -18,7 +18,7 @@ public class Sumador {
         //se obtiene min(1,1,1)
         
         //usando la metrica se obtienen los siguientes numeros de aristas 1+2+1+1+1+2+1-n
-        if(matrixA.size() != matrixB.size() || matrixA.get(0).size() != matrixB.get(0).size()){
+        if(diferentSizeMatriz(matrixA,matrixB)){
             throw new NumberFormatException("Las matrices son de distinto tamaño.");
         }
         
@@ -56,6 +56,10 @@ public class Sumador {
         }
         
         return result;
+    }
+    
+    private boolean diferentSizeMatriz(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
+        return matrixA.size() != matrixB.size() || matrixA.get(0).size() != matrixB.get(0).size();
     }
 }
 
