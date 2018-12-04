@@ -237,8 +237,7 @@ public class MatrizDoble extends javax.swing.JFrame {
   
         }
         }catch(Exception e){
-        
-        
+
         }
         
         // Matriz 2
@@ -259,8 +258,7 @@ public class MatrizDoble extends javax.swing.JFrame {
   
         }
         }catch(Exception e){
-        
-        
+
         }
         
         ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
@@ -279,6 +277,7 @@ public class MatrizDoble extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
