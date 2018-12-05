@@ -194,7 +194,7 @@ public class MatrizEscalar extends javax.swing.JFrame {
         
         MultEscalar mulEscalar = new MultEscalar();
         ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-        matrizFinal = mulEscalar.multEscalar(matriz, escalar);
+        matrizFinal = mulEscalar.multiplyMatrixByScalar(matriz, escalar);
         ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
         resultado.setVisible(true);
     }//GEN-LAST:event_jButtonAceptarActionPerformed

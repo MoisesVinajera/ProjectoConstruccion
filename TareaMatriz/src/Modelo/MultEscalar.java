@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class MultEscalar {
     
-    public ArrayList<ArrayList<Double>> multEscalar(ArrayList<ArrayList<Double>> matrix, double escalar){        
+    public ArrayList<ArrayList<Double>> multiplyMatrixByScalar(ArrayList<ArrayList<Double>> matrix, double escalar){        
         for (int i = 0; i < matrix.size(); i++) {
             matrix.set(i, MultEscalar.multiplyRow(matrix.get(i), escalar));
         }

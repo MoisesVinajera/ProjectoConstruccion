@@ -33,7 +33,7 @@ public class Matrices {
         Utilidades.printMatrix(matrix);
         
         MultEscalar esc = new MultEscalar();
-        esc.multEscalar(matrix, 32);
+        esc.multiplyMatrixByScalar(matrix, 32);
         Utilidades.printMatrix(matrix);
         
         Sumador sum = new Sumador();
