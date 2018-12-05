@@ -179,7 +179,7 @@ public class MatrizUnica extends javax.swing.JFrame {
             
             Inversor inversor = new Inversor();
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-            matrizFinal = inversor.invertir(matriz);
+            matrizFinal = inversor.invertMatrix(matriz);
             ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
             
             resultado.setVisible(true);

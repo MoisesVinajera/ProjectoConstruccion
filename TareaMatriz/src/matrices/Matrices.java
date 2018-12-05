@@ -29,7 +29,7 @@ public class Matrices {
         Utilidades.printMatrix(matrix);
         
         Inversor inv = new Inversor();
-        inv.invertir(matrix);
+        inv.invertMatrix(matrix);
         Utilidades.printMatrix(matrix);
         
         MultEscalar esc = new MultEscalar();
