@@ -8,6 +8,11 @@ package Vista;
 import Modelo.MultMatricial;
 import Modelo.Sumador;
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -313,6 +318,71 @@ public class MatrizDoble extends javax.swing.JFrame {
         });
     }
 
+    public int getMatrizAcolumnas() {
+        return MatrizAcolumnas;
+    }
+
+    public int getMatrizAfilas() {
+        return MatrizAfilas;
+    }
+
+    public int getMatrizBcolumnas() {
+        return MatrizBcolumnas;
+    }
+
+    public int getMatrizBfilas() {
+        return MatrizBfilas;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public JButton getjButtonAceptar() {
+        return jButtonAceptar;
+    }
+
+    public JButton getjButtonAplicar() {
+        return jButtonAplicar;
+    }
+
+    public JLabel getjLabelNotificacion() {
+        return jLabelNotificacion;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public JTable getjTable2() {
+        return jTable2;
+    }
+
+    public JTextField getjTextMatriz1Columna() {
+        return jTextMatriz1Columna;
+    }
+
+    public JTextField getjTextMatriz1Fila() {
+        return jTextMatriz1Fila;
+    }
+
+    public JTextField getjTextMatriz2Columna() {
+        return jTextMatriz2Columna;
+    }
+
+    public JTextField getjTextMatriz2Fila() {
+        return jTextMatriz2Fila;
+    }
+
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;

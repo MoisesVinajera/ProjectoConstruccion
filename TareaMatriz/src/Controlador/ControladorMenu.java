@@ -10,20 +10,28 @@ import Vista.MatrizEscalar;
 import Vista.MatrizUnica;
 import Vista.Menu;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author Moises
  */
-public class ControladorMenu {
-    private Menu menu;
+public class ControladorMenu implements ActionListener {
+    private Menu menu = new Menu();
     
+        
+    public ControladorMenu(){
+        menu.setVisible(true);
+        this.menu.getjButtonAceptar().addActionListener(this);
+
+    }
+    
+    @Override
     public void actionPerformed(ActionEvent e) {
-        if(menu.get== e.getSource()){
-            switch(this.jComboBox1.getSelectedItem().toString()){
+        if(menu.getjButtonAceptar()== e.getSource()){
+            switch(menu.getjComboBox1().getSelectedItem().toString()){
                 case "Obtener Inversa":
-                    MatrizUnica vistaInversa = new MatrizUnica("Obtener Inversa");
-                    vistaInversa.setVisible(true);
+                    ControladorMatrizUnica controladorMatrizUnica = new ControladorMatrizUnica("Obtener Inversa");
                     break;
 
                 case "Multiplicacion por Escalar":

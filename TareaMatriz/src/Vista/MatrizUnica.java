@@ -8,6 +8,11 @@ package Vista;
 import Modelo.Inversor;
 import Modelo.Trasponedor;
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -248,6 +253,55 @@ public class MatrizUnica extends javax.swing.JFrame {
             }
         });
     }
+
+    public int getFilas() {
+        return filas;
+    }
+
+    public int getColumnas() {
+        return columnas;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public JButton getjButtonAceptar() {
+        return jButtonAceptar;
+    }
+
+    public JButton getjButtonAplicar() {
+        return jButtonAplicar;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabelNotificacion() {
+        return jLabelNotificacion;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public JTextField getjTextColumnas() {
+        return jTextColumnas;
+    }
+
+    public JTextField getjTextFilas() {
+        return jTextFilas;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;

@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Vista.MatrizDoble;
 import java.awt.event.ActionEvent;
 
 /**
@@ -12,9 +13,12 @@ import java.awt.event.ActionEvent;
  * @author Moises
  */
 public class ControladorMatrizDoble {
+    private MatrizDoble vistaMatrizDoble;
     public void actionPerformed(ActionEvent e) {
-        
-        if(vistaBuscador.getjButtonConfirmar()== e.getSource()){
+        if(vistaMatrizDoble.getjButtonAplicar()== e.getSource()){
+            
+        }
+        if(vistaMatrizDoble.getjButtonAceptar()== e.getSource()){
             
         }
     }   
