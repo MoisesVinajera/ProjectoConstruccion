@@ -207,7 +207,7 @@ public class MatrizUnica extends javax.swing.JFrame {
             
             Trasponedor trasponedor = new Trasponedor();
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-            matrizFinal = trasponedor.trasponer(matriz);
+            matrizFinal = trasponedor.trasposeMatrix(matriz);
             ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
             
             resultado.setVisible(true);

@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class Trasponedor {
-    public ArrayList<ArrayList<Double>> trasponer(ArrayList<ArrayList<Double>> matrix){
+    public ArrayList<ArrayList<Double>> trasposeMatrix(ArrayList<ArrayList<Double>> matrix){
         ArrayList<ArrayList<Double>> resultado = new ArrayList<>();
         int grado = matrix.size();
         

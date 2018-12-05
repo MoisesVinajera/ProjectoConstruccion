@@ -41,7 +41,7 @@ public class Matrices {
         Utilidades.printMatrix(matrix);
         
         Trasponedor tras = new Trasponedor();
-        tras.trasponer(matrix);
+        tras.trasposeMatrix(matrix);
         Utilidades.printMatrix(matrix);
         
         MultMatricial mat = new MultMatricial();
