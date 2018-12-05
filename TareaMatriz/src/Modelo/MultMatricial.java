@@ -18,7 +18,7 @@ public class MultMatricial {
         //diagrama f1 tipo prime y el diagrama f2(f3) que es un diagrama anidado
         // para medir la cantidad de nodos n(f1, f2(f3)) = n(f1) + n(f2(f3))-2 + 1
         //n(f1) = 4
-    public ArrayList<ArrayList<Double>> multMatricial(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
+    public ArrayList<ArrayList<Double>> matrixMultiplication(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
         if(Utilidades.areDiferentSizeColumnARowB(matrizA,matrizB)){
             throw new NumberFormatException("Multiplicación imposible, los tamaños no coinciden.");
         }

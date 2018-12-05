@@ -45,7 +45,7 @@ public class Matrices {
         Utilidades.printMatrix(matrix);
         
         MultMatricial mat = new MultMatricial();
-        matrix = mat.multMatricial(matrix, matrix);
+        matrix = mat.matrixMultiplication(matrix, matrix);
         Utilidades.printMatrix(matrix);
         
         for (int i = 0; i < matrix.size(); i++) {

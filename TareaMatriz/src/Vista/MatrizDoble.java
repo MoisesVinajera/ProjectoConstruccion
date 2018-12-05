@@ -264,7 +264,7 @@ public class MatrizDoble extends javax.swing.JFrame {
         ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
         if(this.tipo.equals("Multiplicacion Matricial")){
             MultMatricial mulMatricial = new MultMatricial();
-            matrizFinal = mulMatricial.multMatricial(matriz, matriz2);
+            matrizFinal = mulMatricial.matrixMultiplication(matriz, matriz2);
             ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
             resultado.setVisible(true);
                   
