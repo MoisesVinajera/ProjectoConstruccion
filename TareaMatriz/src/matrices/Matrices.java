@@ -25,7 +25,7 @@ public class Matrices {
 
         
         Determinante det = new Determinante();
-        System.out.println(det.determinante(matrix));
+        System.out.println(det.calculateDeterminant(matrix));
         Utilidades.printMatrix(matrix);
         
         Inversor inv = new Inversor();

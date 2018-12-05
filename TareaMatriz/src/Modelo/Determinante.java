@@ -19,7 +19,7 @@ public class Determinante {
         //1+max(0+0+((1+max(3))))
         //1+max(0+0+(4))
         //5
-    public double determinante(ArrayList<ArrayList<Double>> matrix){
+    public double calculateDeterminant(ArrayList<ArrayList<Double>> matrix){
         if(!Utilidades.isSquaredDoubleMatrix(matrix)){
             throw new NumberFormatException("La matriz no es cuadrada.");
         }
@@ -39,7 +39,7 @@ public class Determinante {
                     }
                 }
             }
-            resultado += matrix.get(0).get(k)*Math.pow(-1, k)*determinante(cofactores);
+            resultado += matrix.get(0).get(k)*Math.pow(-1, k)*calculateDeterminant(cofactores);
             cofactores = new ArrayList<>();
         }     
         return resultado;

@@ -133,7 +133,7 @@ public class Utilidades {
     
     public static boolean isDeterminatCero(ArrayList<ArrayList<Double>> matrix){
         Determinante det = new Determinante();
-        return det.determinante(matrix) == 0;
+        return det.calculateDeterminant(matrix) == 0;
     }
     
     public static boolean areDiferentSizeColumnARowB(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
