@@ -30,7 +30,7 @@ public class Sumador {
         return result;
     }
     
-    public static ArrayList<Double> addRows(ArrayList<Double> row, ArrayList<Double> adding){
+    private static ArrayList<Double> addRows(ArrayList<Double> row, ArrayList<Double> adding){
         if(Utilidades.diferentSizeElement(row, adding)){
             throw new NumberFormatException("Addition with different size of array.");
         }
