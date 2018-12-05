@@ -31,7 +31,7 @@ public class ControladorMenu implements ActionListener {
         if(menu.getjButtonAceptar()== e.getSource()){
             switch(menu.getjComboBox1().getSelectedItem().toString()){
                 case "Obtener Inversa":
-                    ControladorMatrizUnica controladorMatrizUnica = new ControladorMatrizUnica("Obtener Inversa");
+                    ControladorMatrizUnica controladorMatrizUnicaInversa = new ControladorMatrizUnica("Obtener Inversa");
                     break;
 
                 case "Multiplicacion por Escalar":
@@ -40,18 +40,15 @@ public class ControladorMenu implements ActionListener {
                     break;
 
                 case "Multiplicacion Matricial":
-                    MatrizDoble vistaMulMatricial = new MatrizDoble("Multiplicacion Matricial");
-                    vistaMulMatricial.setVisible(true);
+                    ControladorMatrizDoble controladorMatrizDobleMultMatricial = new ControladorMatrizDoble("Multiplicacion Matricial"); 
                     break;
 
                 case "Obtener Transpuesta":
-                    MatrizUnica vistaTranspuesta = new MatrizUnica("Obtener Transpuesta");
-                    vistaTranspuesta.setVisible(true);
+                    ControladorMatrizUnica controladorMatrizUnicaTranspuesta = new ControladorMatrizUnica("Obtener Transpuesta");
                     break;
 
                 case "Suma de Matrices":
-                    MatrizDoble vistaSuma = new MatrizDoble("Suma de Matrices");
-                    vistaSuma.setVisible(true);
+                    ControladorMatrizDoble controladorMatrizDobleSumMatricial = new ControladorMatrizDoble("Suma de Matrices");
                     break;
 
                 default:

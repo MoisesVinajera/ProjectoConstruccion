@@ -32,7 +32,6 @@ public class ControladorMatrizUnica implements ActionListener{
         vistaMatrizUnica = new MatrizUnica(tipo);
         this.tipo = tipo;
         vistaMatrizUnica.setVisible(true);
-//        escribirTabla();
         this.vistaMatrizUnica.getjButtonAplicar().addActionListener(this);
         this.vistaMatrizUnica.getjButtonAceptar().addActionListener(this);
         
