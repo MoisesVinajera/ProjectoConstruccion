@@ -16,7 +16,7 @@ public class MultEscalar {
         return matrix;
     }
     
-    public static ArrayList<Double> multiplyRowByScalar(ArrayList<Double> row, double escalar){
+    private static ArrayList<Double> multiplyRowByScalar(ArrayList<Double> row, double escalar){
         ArrayList<Double> result = new ArrayList<>();
         
         for (int i = 0; i < row.size(); i++) {
