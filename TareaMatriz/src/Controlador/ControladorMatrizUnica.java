@@ -62,16 +62,20 @@ public class ControladorMatrizUnica implements ActionListener{
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
             
             if(this.tipo.equals("Obtener Inversa")){
-                matrizFinal = new Inversor().invertMatrix(matriz);
-            }else if(this.tipo.equals("Obtener Transpuesta")){               
-                matrizFinal = new Trasponedor().trasposeMatrix(matriz);
-            }else if(this.tipo.equals("Obtener Determinante")){
+                matrizFinal = new Inversor().invertMatrix(matriz);  
+            }
+            else if(this.tipo.equals("Obtener Transpuesta")){               
+                matrizFinal = new Trasponedor().trasposeMatrix(matriz);  
+            }
+            else if(this.tipo.equals("Obtener Determinante")){
                 ArrayList<Double> placeHolder = new ArrayList();
                 placeHolder.add(new Determinante().calculateDeterminant(matriz));
                 matrizFinal.add(placeHolder);
-            }else if(this.tipo.equals("Solucionar Sistema")){
+            }
+            else if(this.tipo.equals("Solucionar Sistema")){
                 matrizFinal = new Solucionador().solucionar(matriz);
             }
+            
             resultado = new ResultadoMatriz(matrizFinal);
             resultado.setVisible(true);
         }
