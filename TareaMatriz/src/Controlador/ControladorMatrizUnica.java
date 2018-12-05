@@ -109,7 +109,5 @@ public class ControladorMatrizUnica implements ActionListener{
                 resultado.setVisible(true);
             }
         }
-        
-        
     } 
 }

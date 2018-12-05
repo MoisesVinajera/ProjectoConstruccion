@@ -17,9 +17,16 @@ public class Inversor {
             throw new NumberFormatException("La matriz no tiene inversa.");
         }
         
+        matrix = concatenateIdentity(matrix);
+        matrix = invert(matrix);
+        matrix = eraseIdentity(matrix);
+        return matrix;
+    }
+    
+    private ArrayList<ArrayList<Double>> concatenateIdentity(ArrayList<ArrayList<Double>> matrix){
+        //Matrix identidad
         int grado = matrix.size();
         
-        //Matrix identidad
         for (int i = 0; i < grado; i++) {
             for (int j = 0; j < grado; j++) {
                 if(i == j){
@@ -29,6 +36,12 @@ public class Inversor {
                 }
             }
         }
+        
+        return matrix;
+    }
+    
+    private ArrayList<ArrayList<Double>> invert(ArrayList<ArrayList<Double>> matrix){
+        int grado = matrix.size();
         
         for (int i = 0; i < grado; i++) {
             for (int j = 0; j < grado; j++) {
@@ -46,6 +59,11 @@ public class Inversor {
                 }
             }
         }
+        return matrix;
+    }
+    
+    private ArrayList<ArrayList<Double>> eraseIdentity(ArrayList<ArrayList<Double>> matrix){
+        int grado = matrix.size();
         
         //Retirar la matriz original y conservar la inversa.
         for (int i = 0; i < grado; i++) {
@@ -56,5 +74,4 @@ public class Inversor {
         
         return matrix;
     }
-
 }

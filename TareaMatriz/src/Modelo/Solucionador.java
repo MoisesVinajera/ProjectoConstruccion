@@ -25,8 +25,6 @@ public class Solucionador {
         
         //Se evalúa si el sistema tiene solución.
         if(!Utilidades.isSquaredDoubleMatrix(copia)){
-            System.out.println(copia.size());
-            System.out.println(copia.get(0).size());
             throw new NumberFormatException("La matriz de incógnitas no es cuadrada. "
                     + "El sistema no tiene solución.");
         }
