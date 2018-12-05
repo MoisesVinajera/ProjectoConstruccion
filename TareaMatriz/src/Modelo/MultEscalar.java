@@ -10,13 +10,13 @@ public class MultEscalar {
     
     public ArrayList<ArrayList<Double>> multiplyMatrixByScalar(ArrayList<ArrayList<Double>> matrix, double escalar){        
         for (int i = 0; i < matrix.size(); i++) {
-            matrix.set(i, MultEscalar.multiplyRow(matrix.get(i), escalar));
+            matrix.set(i, MultEscalar.multiplyRowByScalar(matrix.get(i), escalar));
         }
         
         return matrix;
     }
     
-    public static ArrayList<Double> multiplyRow(ArrayList<Double> row, double escalar){
+    public static ArrayList<Double> multiplyRowByScalar(ArrayList<Double> row, double escalar){
         ArrayList<Double> result = new ArrayList<>();
         
         for (int i = 0; i < row.size(); i++) {

@@ -43,13 +43,13 @@ public class Solucionador {
             for (int j = 0; j < grado; j++) {
                 //Normalización
                 double pivote = matrix.get(i).get(i);
-                matrix.set(i, MultEscalar.multiplyRow(matrix.get(i), 1/pivote));
+                matrix.set(i, MultEscalar.multiplyRowByScalar(matrix.get(i), 1/pivote));
                 
                 //Resta de filas
                 for (int k = 0; k < grado; k++) {
                     if(k!=i){
                         ArrayList<Double> auxRow;
-                        auxRow = MultEscalar.multiplyRow(matrix.get(i), matrix.get(k).get(i));
+                        auxRow = MultEscalar.multiplyRowByScalar(matrix.get(i), matrix.get(k).get(i));
                         matrix.set(k, Sumador.subRows(matrix.get(k), auxRow));
                     }
                 }
