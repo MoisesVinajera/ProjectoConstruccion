@@ -46,26 +46,7 @@ public class ControladorMatrizEscalar implements ActionListener{
             vistaMatrizEscalar.getjButtonAceptar().setVisible(true);
         }
         if(vistaMatrizEscalar.getjButtonAceptar()== e.getSource()){
-            ArrayList<ArrayList<Double>> matriz = new ArrayList();
-            try{
-             for (int i = 0; i < filas; i++) {
-
-                ArrayList<Double> numeros = new ArrayList();
-
-                for (int j = 0; j < columnas; j++) {
-                    System.out.println(i + "   " + j);
-                    Double numero = Double.parseDouble(vistaMatrizEscalar.getjTable1().getModel().getValueAt(i, j).toString());
-
-                    numeros.add(numero);
-                }
-
-                matriz.add(numeros);
-
-            }
-            }catch(Exception exception){
-
-
-            }
+            ArrayList<ArrayList<Double>> matriz = formMatrix();
 
             MultEscalar mulEscalar = new MultEscalar();
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
@@ -73,6 +54,22 @@ public class ControladorMatrizEscalar implements ActionListener{
             ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
             resultado.setVisible(true);
         }
+    }
+    
+    private ArrayList<ArrayList<Double>> formMatrix(){
+        ArrayList<ArrayList<Double>> matriz = new ArrayList();
+        try{
+            for (int i = 0; i < filas; i++) {
+                ArrayList<Double> numeros = new ArrayList();
+                for (int j = 0; j < columnas; j++) {
+                    Double numero = Double.parseDouble(vistaMatrizEscalar.getjTable1().getModel().getValueAt(i, j).toString());
+                    numeros.add(numero);
+                }
+                matriz.add(numeros);
+            } 
+        }catch(NullPointerException exception){
 
+        }
+        return matriz;
     }
 }
