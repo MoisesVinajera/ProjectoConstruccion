@@ -24,10 +24,6 @@ public class MatrizEscalar extends javax.swing.JFrame {
      * Creates new form MatrizEscalar
      */
     
-    private int filas;
-    private int columnas;
-    private double escalar;
-    
     public MatrizEscalar() {
         initComponents();
         this.jButtonAceptar.setVisible(false);
@@ -152,56 +148,12 @@ public class MatrizEscalar extends javax.swing.JFrame {
 
     private void jButtonAplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAplicarActionPerformed
         // TODO add your handling code here:
-        this.columnas = Integer.parseInt(this.jTextColumnas.getText());
-        this.filas = Integer.parseInt(this.jTextFilas.getText());
-        this.escalar = Double.parseDouble(this.jTextEscalar.getText());
         
-        DefaultTableModel model = new DefaultTableModel(filas, columnas);
-        this.jTable1.setShowGrid(true);
-        this.jTable1.getTableHeader().setUI(null);
-        this.jTable1.setModel(model);
-        
-        this.jLabelNotificacion.setText("Importante rellenar la matriz!");
-        this.jButtonAceptar.setVisible(true);
     }//GEN-LAST:event_jButtonAplicarActionPerformed
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
         // TODO add your handling code here:
-        ArrayList<ArrayList<Double>> matriz = new ArrayList();
-        try{
-         for (int i = 0; i < filas; i++) {
-            
-            ArrayList<Double> numeros = new ArrayList();
-            
-            for (int j = 0; j < columnas; j++) {
-                System.out.println(i + "   " + j);
-                Double numero = Double.parseDouble(this.jTable1.getModel().getValueAt(i, j).toString());
-               
-                numeros.add(numero);
-            }
-            
-            matriz.add(numeros);
-            
-            
-            
-            
-                
-                
-                
-           
-        }
-        }catch(Exception e){
         
-        
-        }
-        
-       
-        
-        MultEscalar mulEscalar = new MultEscalar();
-        ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-        matrizFinal = mulEscalar.multiplyMatrixByScalar(matriz, escalar);
-        ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-        resultado.setVisible(true);
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     /**
@@ -239,17 +191,6 @@ public class MatrizEscalar extends javax.swing.JFrame {
         });
     }
 
-    public int getFilas() {
-        return filas;
-    }
-
-    public int getColumnas() {
-        return columnas;
-    }
-
-    public double getEscalar() {
-        return escalar;
-    }
 
     public JButton getjButtonAceptar() {
         return jButtonAceptar;

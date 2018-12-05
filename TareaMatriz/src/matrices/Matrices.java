@@ -19,7 +19,7 @@ public class Matrices {
         
 //        Menu menu = new Menu();
 //        menu.setVisible(true);
-        
+//        
 //        ArrayList<ArrayList<Double>> matrix = new ArrayList<>();
 //        
 //        matrix.add(new ArrayList<>(asList(5.0, 1.0, 1.0, 1.0)));

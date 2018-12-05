@@ -77,35 +77,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
         // TODO add your handling code here:
-        switch(this.jComboBox1.getSelectedItem().toString()){
-            case "Obtener Inversa":
-                MatrizUnica vistaInversa = new MatrizUnica("Obtener Inversa");
-                vistaInversa.setVisible(true);
-                break;
-                
-            case "Multiplicacion por Escalar":
-                MatrizEscalar vistaEscalar = new MatrizEscalar();
-                vistaEscalar.setVisible(true);
-                break;
-               
-            case "Multiplicacion Matricial":
-                MatrizDoble vistaMulMatricial = new MatrizDoble("Multiplicacion Matricial");
-                vistaMulMatricial.setVisible(true);
-                break;
-                
-            case "Obtener Transpuesta":
-                MatrizUnica vistaTranspuesta = new MatrizUnica("Obtener Transpuesta");
-                vistaTranspuesta.setVisible(true);
-                break;
-                
-            case "Suma de Matrices":
-                MatrizDoble vistaSuma = new MatrizDoble("Suma de Matrices");
-                vistaSuma.setVisible(true);
-                break;
-                
-            default:
-                break;
-        }
+        
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     /**

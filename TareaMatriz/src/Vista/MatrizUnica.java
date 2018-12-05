@@ -21,17 +21,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MatrizUnica extends javax.swing.JFrame {
     
-    private int filas;
-    private int columnas;
-    private String tipo;
 
     /**
      * Creates new form MatrizUnica
      */
-    public MatrizUnica(String tipo) {
+    public MatrizUnica() {
         initComponents();
         this.jButtonAceptar.setVisible(false);
-        this.tipo = tipo;
     }
 
     /**
@@ -147,16 +143,6 @@ public class MatrizUnica extends javax.swing.JFrame {
     private void jButtonAplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAplicarActionPerformed
         // TODO add your handling code here:
         
-        this.columnas = Integer.parseInt(this.jTextColumnas.getText());
-        this.filas = Integer.parseInt(this.jTextFilas.getText());
-        
-        DefaultTableModel model = new DefaultTableModel(filas, columnas);
-        this.jTable1.setShowGrid(true);
-        this.jTable1.getTableHeader().setUI(null);
-        this.jTable1.setModel(model);
-        
-        this.jLabelNotificacion.setText("Importante rellenar la matriz!");
-        this.jButtonAceptar.setVisible(true);
         
     }//GEN-LAST:event_jButtonAplicarActionPerformed
 
@@ -164,59 +150,7 @@ public class MatrizUnica extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        if(this.tipo.equals("Obtener Inversa")){
-            
-            ArrayList<ArrayList<Double>> matriz = new ArrayList();
-                        
-        
-        for (int i = 0; i < filas; i++) {
-            
-            ArrayList<Double> numeros = new ArrayList();
-            for (int j = 0; j < columnas; j++) {
-                
-                 Double numero = Double.parseDouble(this.jTable1.getModel().getValueAt(i, j).toString());
-               
-                numeros.add(numero);
-            }
-            
-            matriz.add(numeros);
-        }
-            
-            Inversor inversor = new Inversor();
-            ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-            matrizFinal = inversor.invertMatrix(matriz);
-            ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-            
-            resultado.setVisible(true);
-            
-        } else if(this.tipo.equals("Obtener Transpuesta")){
-            ArrayList<ArrayList<Double>> matriz = new ArrayList();
-            try{
-               
-            for (int i = 0; i < filas; i++) {
-            
-            ArrayList<Double> numeros = new ArrayList();
-            for (int j = 0; j < columnas; j++) {
-                
-                 Double numero = Double.parseDouble(this.jTable1.getModel().getValueAt(i, j).toString());
-               
-                numeros.add(numero);
-            }
-            
-            matriz.add(numeros);
-        } 
-                
-            }catch(NullPointerException e){
-                
-            }
-            
-            Trasponedor trasponedor = new Trasponedor();
-            ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-            matrizFinal = trasponedor.trasposeMatrix(matriz);
-            ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-            
-            resultado.setVisible(true);
-        }
+
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     /**
@@ -254,17 +188,6 @@ public class MatrizUnica extends javax.swing.JFrame {
         });
     }
 
-    public int getFilas() {
-        return filas;
-    }
-
-    public int getColumnas() {
-        return columnas;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
 
     public JButton getjButtonAceptar() {
         return jButtonAceptar;

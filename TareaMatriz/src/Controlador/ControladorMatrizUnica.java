@@ -29,7 +29,7 @@ public class ControladorMatrizUnica implements ActionListener{
 
         
     public ControladorMatrizUnica(String tipo){
-        vistaMatrizUnica = new MatrizUnica(tipo);
+        vistaMatrizUnica = new MatrizUnica();
         this.tipo = tipo;
         vistaMatrizUnica.setVisible(true);
         this.vistaMatrizUnica.getjButtonAplicar().addActionListener(this);

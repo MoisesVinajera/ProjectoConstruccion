@@ -27,8 +27,9 @@ public class ControladorMatrizDoble implements ActionListener{
     private String tipo;
     
     public ControladorMatrizDoble(String tipo){
-        vistaMatrizDoble = new MatrizDoble(tipo);
+        vistaMatrizDoble = new MatrizDoble();
         this.tipo = tipo;
+        System.out.println(" prueba  2");
         vistaMatrizDoble.setVisible(true);
         this.vistaMatrizDoble.getjButtonAplicar().addActionListener(this);
         this.vistaMatrizDoble.getjButtonAceptar().addActionListener(this);
@@ -98,12 +99,14 @@ public class ControladorMatrizDoble implements ActionListener{
 
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
             if(this.tipo.equals("Multiplicacion Matricial")){
+                System.out.println(" multiplicacion  " );
                 MultMatricial mulMatricial = new MultMatricial();
                 matrizFinal = mulMatricial.matrixMultiplication(matriz, matriz2);
                 ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
                 resultado.setVisible(true);
 
             } else if(this.tipo.equals("Suma de Matrices")){
+                System.out.println(" suma  " );
                 Sumador sumador = new Sumador();
                 matrizFinal = sumador.sumarMatrices(matriz, matriz2);
                 ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);

@@ -25,16 +25,12 @@ public class MatrizDoble extends javax.swing.JFrame {
      * Creates new form MatrizDoble
      */
     
-    private int MatrizAcolumnas;
-    private int MatrizAfilas;
-    private int MatrizBcolumnas;
-    private int MatrizBfilas;
-    private String tipo;
+
     
-    public MatrizDoble(String tipo) {
+    public MatrizDoble() {
         initComponents();
         this.jButtonAceptar.setVisible(false);
-        this.tipo = tipo;
+
     }
 
     /**
@@ -203,83 +199,13 @@ public class MatrizDoble extends javax.swing.JFrame {
 
     private void jButtonAplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAplicarActionPerformed
         // TODO add your handling code here:
-        this.MatrizAcolumnas = Integer.parseInt(this.jTextMatriz1Columna.getText());
-        this.MatrizAfilas = Integer.parseInt(this.jTextMatriz1Fila.getText());
-        this.MatrizBcolumnas = Integer.parseInt(this.jTextMatriz2Columna.getText());
-        this.MatrizBfilas = Integer.parseInt(this.jTextMatriz2Fila.getText());
-        
-        DefaultTableModel model = new DefaultTableModel(this.MatrizAfilas, this.MatrizAcolumnas);
-        this.jTable1.setShowGrid(true);
-        this.jTable1.getTableHeader().setUI(null);
-        this.jTable1.setModel(model);
-        
-        DefaultTableModel model2 = new DefaultTableModel(this.MatrizBfilas, this.MatrizBcolumnas);
-        this.jTable2.setShowGrid(true);
-        this.jTable2.getTableHeader().setUI(null);
-        this.jTable2.setModel(model2);
-        
-        this.jLabelNotificacion.setText("Importante rellenar la matriz!");
-        this.jButtonAceptar.setVisible(true);
+
     }//GEN-LAST:event_jButtonAplicarActionPerformed
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
         // TODO add your handling code here:
         // Matriz 1
-        ArrayList<ArrayList<Double>> matriz = new ArrayList();
-        try{
-         for (int i = 0; i < MatrizAfilas; i++) {
-            
-            ArrayList<Double> numeros = new ArrayList();
-            
-            for (int j = 0; j < MatrizAcolumnas; j++) {
-                System.out.println(i + "   " + j);
-                Double numero = Double.parseDouble(this.jTable1.getModel().getValueAt(i, j).toString());
-               
-                numeros.add(numero);
-            }
-            
-            matriz.add(numeros);
-  
-        }
-        }catch(Exception e){
-
-        }
         
-        // Matriz 2
-        ArrayList<ArrayList<Double>> matriz2 = new ArrayList();
-        try{
-         for (int i = 0; i < MatrizBfilas; i++) {
-            
-            ArrayList<Double> numeros = new ArrayList();
-            
-            for (int j = 0; j < MatrizBcolumnas; j++) {
-                System.out.println(i + "   " + j);
-                Double numero = Double.parseDouble(this.jTable1.getModel().getValueAt(i, j).toString());
-               
-                numeros.add(numero);
-            }
-            
-            matriz2.add(numeros);
-  
-        }
-        }catch(Exception e){
-
-        }
-        
-        ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-        if(this.tipo.equals("Multiplicacion Matricial")){
-            MultMatricial mulMatricial = new MultMatricial();
-            matrizFinal = mulMatricial.matrixMultiplication(matriz, matriz2);
-            ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-            resultado.setVisible(true);
-                  
-        } else if(this.tipo.equals("Suma de Matrices")){
-            Sumador sumador = new Sumador();
-            matrizFinal = sumador.sumarMatrices(matriz, matriz2);
-            ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-            resultado.setVisible(true); 
-            System.out.println(matrizFinal);
-        }
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     
@@ -318,25 +244,7 @@ public class MatrizDoble extends javax.swing.JFrame {
         });
     }
 
-    public int getMatrizAcolumnas() {
-        return MatrizAcolumnas;
-    }
-
-    public int getMatrizAfilas() {
-        return MatrizAfilas;
-    }
-
-    public int getMatrizBcolumnas() {
-        return MatrizBcolumnas;
-    }
-
-    public int getMatrizBfilas() {
-        return MatrizBfilas;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
+   
 
     public JButton getjButtonAceptar() {
         return jButtonAceptar;

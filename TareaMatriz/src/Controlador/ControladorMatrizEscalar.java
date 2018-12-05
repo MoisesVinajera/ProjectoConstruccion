@@ -25,6 +25,7 @@ public class ControladorMatrizEscalar implements ActionListener{
     
     public ControladorMatrizEscalar(){
         vistaMatrizEscalar = new MatrizEscalar();
+        
         vistaMatrizEscalar.setVisible(true);
         this.vistaMatrizEscalar.getjButtonAplicar().addActionListener(this);
         this.vistaMatrizEscalar.getjButtonAceptar().addActionListener(this);
