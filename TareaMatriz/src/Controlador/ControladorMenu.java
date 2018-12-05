@@ -35,8 +35,7 @@ public class ControladorMenu implements ActionListener {
                     break;
 
                 case "Multiplicacion por Escalar":
-                    MatrizEscalar vistaEscalar = new MatrizEscalar();
-                    vistaEscalar.setVisible(true);
+                    ControladorMatrizEscalar controladorMatrizEscalar = new ControladorMatrizEscalar();
                     break;
 
                 case "Multiplicacion Matricial":
