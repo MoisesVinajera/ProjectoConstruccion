@@ -50,7 +50,13 @@ public class ControladorMenu implements ActionListener {
                     
                     ControladorMatrizDoble controladorMatrizDobleSumMatricial = new ControladorMatrizDoble("Suma de Matrices");
                     break;
-
+                case "Obtener Determinante":
+                    ControladorMatrizUnica controladorMatrizUnicaDeterminante = new ControladorMatrizUnica("Obtener Determinante");
+                    break;
+                
+                case "Solucionar Sistema":
+                    ControladorMatrizUnica controladorMatrizUnicaResolver = new ControladorMatrizUnica("Solucionar Sistema");
+                    break;
                 default:
                     break;
             }

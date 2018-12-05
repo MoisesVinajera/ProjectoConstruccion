@@ -39,7 +39,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setText("Seleccione que desea hacer:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Obtener Inversa", "Multiplicacion por Escalar", "Multiplicacion Matricial", "Suma de Matrices", "Obtener Transpuesta" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Obtener Inversa", "Multiplicacion por Escalar", "Multiplicacion Matricial", "Suma de Matrices", "Obtener Transpuesta", "Obtener Determinante", "Solucionar Sistema" }));
 
         jButtonAceptar.setText("ACEPTAR");
         jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {

@@ -5,7 +5,9 @@
  */
 package Controlador;
 
+import Modelo.Determinante;
 import Modelo.Inversor;
+import Modelo.Solucionador;
 import Modelo.Trasponedor;
 import Vista.MatrizDoble;
 import Vista.MatrizEscalar;
@@ -65,12 +67,32 @@ public class ControladorMatrizUnica implements ActionListener{
 
                 resultado.setVisible(true);
 
-            } else if(this.tipo.equals("Obtener Transpuesta")){
+            }else if(this.tipo.equals("Obtener Transpuesta")){
                 ArrayList<ArrayList<Double>> matriz = formMatrix();
 
                 Trasponedor trasponedor = new Trasponedor();
                 ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
                 matrizFinal = trasponedor.trasposeMatrix(matriz);
+                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
+
+                resultado.setVisible(true);
+            }else if(this.tipo.equals("Obtener Determinante")){
+                ArrayList<ArrayList<Double>> matriz = formMatrix();
+
+                Determinante determinante = new Determinante();
+                ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
+                ArrayList<Double> placeHolder = new ArrayList();
+                placeHolder.add(determinante.calculateDeterminant(matriz));
+                matrizFinal.add(placeHolder);
+                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
+
+                resultado.setVisible(true);
+            }else if(this.tipo.equals("Solucionar Sistema")){
+                ArrayList<ArrayList<Double>> matriz = formMatrix();
+
+                Solucionador solucionador = new Solucionador();
+                ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
+                matrizFinal = solucionador.solucionar(matriz);
                 ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
 
                 resultado.setVisible(true);
