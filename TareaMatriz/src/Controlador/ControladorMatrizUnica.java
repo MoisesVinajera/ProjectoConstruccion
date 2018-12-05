@@ -56,22 +56,7 @@ public class ControladorMatrizUnica implements ActionListener{
             }
         if(vistaMatrizUnica.getjButtonAceptar()== e.getSource()){
             if(this.tipo.equals("Obtener Inversa")){
-
-                ArrayList<ArrayList<Double>> matriz = new ArrayList();
-
-
-            for (int i = 0; i < filas; i++) {
-
-                ArrayList<Double> numeros = new ArrayList();
-                for (int j = 0; j < columnas; j++) {
-
-                     Double numero = Double.parseDouble(vistaMatrizUnica.getjTable1().getModel().getValueAt(i, j).toString());
-
-                    numeros.add(numero);
-                }
-
-                matriz.add(numeros);
-            }
+                ArrayList<ArrayList<Double>> matriz = formMatrix();
 
                 Inversor inversor = new Inversor();
                 ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
@@ -81,25 +66,7 @@ public class ControladorMatrizUnica implements ActionListener{
                 resultado.setVisible(true);
 
             } else if(this.tipo.equals("Obtener Transpuesta")){
-                ArrayList<ArrayList<Double>> matriz = new ArrayList();
-                try{
-
-                for (int i = 0; i < filas; i++) {
-
-                ArrayList<Double> numeros = new ArrayList();
-                for (int j = 0; j < columnas; j++) {
-
-                     Double numero = Double.parseDouble(vistaMatrizUnica.getjTable1().getModel().getValueAt(i, j).toString());
-
-                    numeros.add(numero);
-                }
-
-                matriz.add(numeros);
-            } 
-
-                }catch(NullPointerException exception){
-
-                }
+                ArrayList<ArrayList<Double>> matriz = formMatrix();
 
                 Trasponedor trasponedor = new Trasponedor();
                 ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
@@ -109,5 +76,22 @@ public class ControladorMatrizUnica implements ActionListener{
                 resultado.setVisible(true);
             }
         }
-    } 
+    }
+    
+    private ArrayList<ArrayList<Double>> formMatrix(){
+        ArrayList<ArrayList<Double>> matriz = new ArrayList();
+        try{
+            for (int i = 0; i < filas; i++) {
+                ArrayList<Double> numeros = new ArrayList();
+                for (int j = 0; j < columnas; j++) {
+                    Double numero = Double.parseDouble(vistaMatrizUnica.getjTable1().getModel().getValueAt(i, j).toString());
+                    numeros.add(numero);
+                }
+                matriz.add(numeros);
+            } 
+        }catch(NullPointerException exception){
+
+        }
+        return matriz;
+    }
 }
