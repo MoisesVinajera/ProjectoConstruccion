@@ -15,10 +15,10 @@ public class Matrices {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//          ControladorMenu controladorMenu = new ControladorMenu();
+          ControladorMenu controladorMenu = new ControladorMenu();
         
-        Menu menu = new Menu();
-        menu.setVisible(true);
+//        Menu menu = new Menu();
+//        menu.setVisible(true);
         
 //        ArrayList<ArrayList<Double>> matrix = new ArrayList<>();
 //        
