@@ -96,7 +96,7 @@ public class Utilidades {
         return doble;
     }
     
-    public static ArrayList<ArrayList<Double>>toDouble(ArrayList<ArrayList<String>> stringMatrix){
+    public static ArrayList<ArrayList<Double>>changeStringMatrixToDoubleMatrix(ArrayList<ArrayList<String>> stringMatrix){
         ArrayList<ArrayList<Double>> doubleMatrix = new ArrayList<>();
         
         int filas = stringMatrix.size();
