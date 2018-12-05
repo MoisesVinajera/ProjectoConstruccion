@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author Stamp
  */
 public class Utilidades {
-    public static int toInt(){
+    public static int inputToInt(){
         Scanner scanner = new Scanner(System.in);
         boolean numeroValido = false;
         int entero = 0;
@@ -29,7 +29,7 @@ public class Utilidades {
     }
     
     
-    public static int toInt(int limInf, int limSup){
+    public static int inputToInt(int limInf, int limSup){
         Scanner scanner = new Scanner(System.in);
         boolean numeroValido = false;
         int entero = 0;
@@ -50,7 +50,7 @@ public class Utilidades {
     }
     
     
-    public static int toPostiveInt(){
+    public static int inputToPostiveInt(){
         Scanner scanner = new Scanner(System.in);
         boolean numeroValido = false;
         int entero = 0;
@@ -70,7 +70,7 @@ public class Utilidades {
         return entero;
     }
     
-    public static boolean checkDoubleIn(String input){
+    public static boolean checkDouble(String input){
         boolean numeroValido = false;
         double doble = 0;
         
@@ -83,7 +83,7 @@ public class Utilidades {
         return numeroValido;
     }
     
-    public static double toDoubleIn(String input){
+    public static double toDouble(String input){
         double doble = 0;
         
         try{
@@ -105,7 +105,7 @@ public class Utilidades {
         for(int i = 0; i < filas; i++){
             doubleMatrix.add(new ArrayList<>());
             for (int j = 0; j < columnas; j++) {
-                doubleMatrix.get(i).add(Utilidades.toDoubleIn(stringMatrix.get(i).get(j)));
+                doubleMatrix.get(i).add(Utilidades.toDouble(stringMatrix.get(i).get(j)));
             }
         }
         

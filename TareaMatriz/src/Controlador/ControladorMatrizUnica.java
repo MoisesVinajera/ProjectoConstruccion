@@ -57,46 +57,23 @@ public class ControladorMatrizUnica implements ActionListener{
 
             }
         if(vistaMatrizUnica.getjButtonAceptar()== e.getSource()){
+            ArrayList<ArrayList<Double>> matriz = formMatrix();
+            ResultadoMatriz resultado;
+            ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
+            
             if(this.tipo.equals("Obtener Inversa")){
-                ArrayList<ArrayList<Double>> matriz = formMatrix();
-
-                Inversor inversor = new Inversor();
-                ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-                matrizFinal = inversor.invertMatrix(matriz);
-                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-
-                resultado.setVisible(true);
-
-            }else if(this.tipo.equals("Obtener Transpuesta")){
-                ArrayList<ArrayList<Double>> matriz = formMatrix();
-
-                Trasponedor trasponedor = new Trasponedor();
-                ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-                matrizFinal = trasponedor.trasposeMatrix(matriz);
-                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-
-                resultado.setVisible(true);
+                matrizFinal = new Inversor().invertMatrix(matriz);
+            }else if(this.tipo.equals("Obtener Transpuesta")){               
+                matrizFinal = new Trasponedor().trasposeMatrix(matriz);
             }else if(this.tipo.equals("Obtener Determinante")){
-                ArrayList<ArrayList<Double>> matriz = formMatrix();
-
-                Determinante determinante = new Determinante();
-                ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
                 ArrayList<Double> placeHolder = new ArrayList();
-                placeHolder.add(determinante.calculateDeterminant(matriz));
+                placeHolder.add(new Determinante().calculateDeterminant(matriz));
                 matrizFinal.add(placeHolder);
-                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-
-                resultado.setVisible(true);
             }else if(this.tipo.equals("Solucionar Sistema")){
-                ArrayList<ArrayList<Double>> matriz = formMatrix();
-
-                Solucionador solucionador = new Solucionador();
-                ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
-                matrizFinal = solucionador.solucionar(matriz);
-                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-
-                resultado.setVisible(true);
+                matrizFinal = new Solucionador().solucionar(matriz);
             }
+            resultado = new ResultadoMatriz(matrizFinal);
+            resultado.setVisible(true);
         }
     }
     
