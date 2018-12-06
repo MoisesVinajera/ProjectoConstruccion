@@ -60,6 +60,7 @@ public class ControladorMenu implements ActionListener {
                 default:
                     break;
             }
+            menu.setVisible(false);
         }
     }   
 }
