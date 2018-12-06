@@ -12,13 +12,7 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class Determinante {
-     //The "Largest Prime" meassure k
-        //aplicando la metrica
-        // 1+max(0+0+(1+max(1+max(1+max(1)))))
-        //1+max(0+0+(1+max(1+max(2))))
-        //1+max(0+0+((1+max(3))))
-        //1+max(0+0+(4))
-        //5
+
     public double calculateDeterminant(ArrayList<ArrayList<Double>> matrix){
         if(!Utilidades.isSquaredDoubleMatrix(matrix)){
             throw new NumberFormatException("La matriz no es cuadrada.");

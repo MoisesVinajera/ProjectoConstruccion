@@ -13,11 +13,7 @@ import java.util.ArrayList;
  */
 public class Sumador {
     public ArrayList<ArrayList<Double>> sumarMatrices(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
-        //usando la metrica para medir el flujo se sabe que para que d tenga un valor de 0 o 1 debe estar estructurado, la de solo cuenta a los ciclos While e If
-        //entonces aplicando la metrica  d(F(fj, ... ,F,)) = min(d(F),d(fj), ... ,d(F,))
-        //se obtiene min(1,1,1)
-        
-        //usando la metrica se obtienen los siguientes numeros de aristas 1+2+1+1+1+2+1-n
+
         if(Utilidades.diferentSizeMatriz(matrixA,matrixB)){
             throw new NumberFormatException("Las matrices son de distinto tamaño.");
         }

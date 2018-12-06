@@ -57,6 +57,6 @@ public class Solucionador {
         return matrix;
     }
     
-    // al aplicar la metrica se obtiene que ((2+2+2)+(0+0))=6
+ 
 
 }
