@@ -10,6 +10,11 @@ import java.util.Scanner;
  * @author Stamp
  */
 public class Utilidades {
+
+    /**
+     *
+     * @return
+     */
     public static int inputToInt(){
         Scanner scanner = new Scanner(System.in);
         boolean numeroValido = false;
@@ -28,7 +33,12 @@ public class Utilidades {
         
     }
     
-    
+    /**
+     *
+     * @param limInf
+     * @param limSup
+     * @return
+     */
     public static int inputToInt(int limInf, int limSup){
         Scanner scanner = new Scanner(System.in);
         boolean numeroValido = false;
@@ -49,7 +59,10 @@ public class Utilidades {
         return entero;
     }
     
-    
+    /**
+     *
+     * @return
+     */
     public static int inputToPostiveInt(){
         Scanner scanner = new Scanner(System.in);
         boolean numeroValido = false;
@@ -70,6 +83,11 @@ public class Utilidades {
         return entero;
     }
     
+    /**
+     *
+     * @param input
+     * @return
+     */
     public static boolean checkDouble(String input){
         boolean numeroValido = false;
         double doble = 0;
@@ -83,6 +101,11 @@ public class Utilidades {
         return numeroValido;
     }
     
+    /**
+     *
+     * @param input
+     * @return
+     */
     public static double toDouble(String input){
         double doble = 0;
         
@@ -96,6 +119,11 @@ public class Utilidades {
         return doble;
     }
     
+    /**
+     *
+     * @param stringMatrix
+     * @return
+     */
     public static ArrayList<ArrayList<Double>>changeStringMatrixToDoubleMatrix(ArrayList<ArrayList<String>> stringMatrix){
         ArrayList<ArrayList<Double>> doubleMatrix = new ArrayList<>();
         
@@ -112,14 +140,28 @@ public class Utilidades {
         return doubleMatrix;
     }
     
+    /**
+     *
+     * @param matrix
+     * @return
+     */
     public static boolean isSquaredStringMatrix(ArrayList<ArrayList<String>> matrix){
         return matrix.size() == matrix.get(0).size();
     }
     
+    /**
+     *
+     * @param matrix
+     * @return
+     */
     public static boolean isSquaredDoubleMatrix(ArrayList<ArrayList<Double>> matrix){
         return matrix.size() == matrix.get(0).size();
     }
     
+    /**
+     *
+     * @param matrix
+     */
     public static void printMatrix(ArrayList<ArrayList<Double>> matrix){
         System.out.println("");
         NumberFormat format = new DecimalFormat("#0.0000");
@@ -131,19 +173,42 @@ public class Utilidades {
         }
     }
     
+    /**
+     *
+     * @param matrix
+     * @return
+     */
     public static boolean isDeterminatCero(ArrayList<ArrayList<Double>> matrix){
         Determinante det = new Determinante();
         return det.calculateDeterminant(matrix) == 0;
     }
     
+    /**
+     *
+     * @param matrizA
+     * @param matrizB
+     * @return
+     */
     public static boolean areDiferentSizeColumnARowB(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
         return matrizA.get(0).size() != matrizB.size();
     }
     
+    /**
+     *
+     * @param matrixA
+     * @param matrixB
+     * @return
+     */
     public static boolean diferentSizeMatriz(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
         return matrixA.size() != matrixB.size() || matrixA.get(0).size() != matrixB.get(0).size();
     }
     
+    /**
+     *
+     * @param row
+     * @param substracting
+     * @return
+     */
     public static boolean diferentSizeElement(ArrayList<Double> row, ArrayList<Double> substracting){
         return row.size() != substracting.size();
     }

@@ -13,6 +13,11 @@ import java.util.ArrayList;
  */
 public class Determinante {
 
+    /**
+     *
+     * @param matrix - matriz a la cual se le calcula el determinante
+     * @return Determinante
+     */
     public double calculateDeterminant(ArrayList<ArrayList<Double>> matrix){
         if(!Utilidades.isSquaredDoubleMatrix(matrix)){
             throw new NumberFormatException("La matriz no es cuadrada.");

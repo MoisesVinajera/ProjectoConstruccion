@@ -12,6 +12,12 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class Solucionador {
+
+    /**
+     *
+     * @param matrix 
+     * @return
+     */
     public ArrayList<ArrayList<Double>> solucionar(ArrayList<ArrayList<Double>> matrix){
         ArrayList<ArrayList<Double>> copia = new ArrayList<>();
         

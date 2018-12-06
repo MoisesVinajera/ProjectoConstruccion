@@ -8,6 +8,11 @@ import java.util.ArrayList;
  */
 public class Inversor {
     
+    /**
+     *
+     * @param matrix - Matriz que se va a invertir
+     * @return Matriz Invertida
+     */
     public ArrayList<ArrayList<Double>> invertMatrix(ArrayList<ArrayList<Double>> matrix){        
         if(!Utilidades.isSquaredDoubleMatrix(matrix)){
             throw new NumberFormatException("La matriz no es cuadrada.");
