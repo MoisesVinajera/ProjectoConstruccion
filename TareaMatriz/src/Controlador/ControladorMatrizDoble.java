@@ -12,6 +12,7 @@ import Vista.ResultadoMatriz;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,11 +30,12 @@ public class ControladorMatrizDoble implements ActionListener{
     public ControladorMatrizDoble(String tipo){
         vistaMatrizDoble = new MatrizDoble();
         this.tipo = tipo;
-        System.out.println(" prueba  2");
         vistaMatrizDoble.setVisible(true);
         this.vistaMatrizDoble.getjButtonAplicar().addActionListener(this);
         this.vistaMatrizDoble.getjButtonAceptar().addActionListener(this);
     }
+    
+    @Override
     public void actionPerformed(ActionEvent e) {
         if(vistaMatrizDoble.getjButtonAplicar()== e.getSource()){
             this.MatrizAcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Columna().getText());
@@ -55,65 +57,38 @@ public class ControladorMatrizDoble implements ActionListener{
             vistaMatrizDoble.getjButtonAceptar().setVisible(true);
         }
         if(vistaMatrizDoble.getjButtonAceptar()== e.getSource()){
-            // Matriz 1
-            ArrayList<ArrayList<Double>> matriz = new ArrayList();
-            try{
-             for (int i = 0; i < MatrizAfilas; i++) {
-
-                ArrayList<Double> numeros = new ArrayList();
-
-                for (int j = 0; j < MatrizAcolumnas; j++) {
-                    System.out.println(i + "   " + j);
-                    Double numero = Double.parseDouble(vistaMatrizDoble.getjTable1().getModel().getValueAt(i, j).toString());
-
-                    numeros.add(numero);
-                }
-
-                matriz.add(numeros);
-
-            }
-            }catch(Exception exception){
-
-            }
-
-            // Matriz 2
-            ArrayList<ArrayList<Double>> matriz2 = new ArrayList();
-            try{
-             for (int i = 0; i < MatrizBfilas; i++) {
-
-                ArrayList<Double> numeros = new ArrayList();
-
-                for (int j = 0; j < MatrizBcolumnas; j++) {
-                    System.out.println(i + "   " + j);
-                    Double numero = Double.parseDouble(vistaMatrizDoble.getjTable2().getModel().getValueAt(i, j).toString());
-
-                    numeros.add(numero);
-                }
-
-                matriz2.add(numeros);
-
-            }
-            }catch(Exception exception){
-
-            }
-
+            ArrayList<ArrayList<Double>> matriz = formMatrix(vistaMatrizDoble.getjTable1());
+            ArrayList<ArrayList<Double>> matriz2 = formMatrix(vistaMatrizDoble.getjTable2());
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
+            
             if(this.tipo.equals("Multiplicacion Matricial")){
-                System.out.println(" multiplicacion  " );
-                MultMatricial mulMatricial = new MultMatricial();
-                matrizFinal = mulMatricial.matrixMultiplication(matriz, matriz2);
-                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-                resultado.setVisible(true);
-
-            } else if(this.tipo.equals("Suma de Matrices")){
-                System.out.println(" suma  " );
-                Sumador sumador = new Sumador();
-                matrizFinal = sumador.sumarMatrices(matriz, matriz2);
-                ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
-                resultado.setVisible(true); 
-                System.out.println(matrizFinal);
+                matrizFinal = new MultMatricial().matrixMultiplication(matriz, matriz2);
             }
+            else if(this.tipo.equals("Suma de Matrices")){
+                matrizFinal = new Sumador().sumarMatrices(matriz, matriz2);
+            }
+            
+            ResultadoMatriz resultado = new ResultadoMatriz(matrizFinal);
+            resultado.setVisible(true);
         }
     }   
+    
+    private ArrayList<ArrayList<Double>> formMatrix(JTable table){
+        ArrayList<ArrayList<Double>> matrix = new ArrayList();
+        try{
+            for (int i = 0; i < MatrizBfilas; i++) {
+                ArrayList<Double> numeros = new ArrayList();
+                for (int j = 0; j < MatrizBcolumnas; j++) {
+                    System.out.println(i + "   " + j);
+                    Double numero = Double.parseDouble(table.getModel().getValueAt(i, j).toString());
 
+                    numeros.add(numero);
+                }
+                matrix.add(numeros);
+            }
+        }catch(Exception exception){
+            System.out.println(exception.getMessage());
+        }
+        return matrix;
+    }
 }
