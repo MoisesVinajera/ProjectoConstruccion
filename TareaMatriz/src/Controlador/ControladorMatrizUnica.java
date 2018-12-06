@@ -43,13 +43,8 @@ public class ControladorMatrizUnica implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(vistaMatrizUnica.getjButtonAplicar()== e.getSource()){
-            columnas = Integer.parseInt(vistaMatrizUnica.getjTextColumnas().getText());
-            filas = Integer.parseInt(vistaMatrizUnica.getjTextFilas().getText());
-
-            DefaultTableModel model = new DefaultTableModel(filas, columnas);
-            vistaMatrizUnica.getjTable1().setShowGrid(true);
-            vistaMatrizUnica.getjTable1().getTableHeader().setUI(null);
-            vistaMatrizUnica.getjTable1().setModel(model);
+            takeValues();
+            showTable();
 
             vistaMatrizUnica.getjLabelNotificacion().setText("Importante rellenar la matriz!");
             vistaMatrizUnica.getjButtonAceptar().setVisible(true);
@@ -96,5 +91,16 @@ public class ControladorMatrizUnica implements ActionListener{
 
         }
         return matriz;
+    }
+    private void takeValues(){
+        columnas = Integer.parseInt(vistaMatrizUnica.getjTextColumnas().getText());
+        filas = Integer.parseInt(vistaMatrizUnica.getjTextFilas().getText());
+    }
+    
+    private void showTable(){
+        DefaultTableModel model = new DefaultTableModel(filas, columnas);
+        vistaMatrizUnica.getjTable1().setShowGrid(true);
+        vistaMatrizUnica.getjTable1().getTableHeader().setUI(null);
+        vistaMatrizUnica.getjTable1().setModel(model);
     }
 }
