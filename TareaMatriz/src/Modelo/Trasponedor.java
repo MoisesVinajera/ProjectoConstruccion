@@ -14,17 +14,25 @@ import java.util.ArrayList;
 public class Trasponedor {
     public ArrayList<ArrayList<Double>> trasposeMatrix(ArrayList<ArrayList<Double>> matrix){
         ArrayList<ArrayList<Double>> resultado = new ArrayList<>();
-        int grado = matrix.size();
         
-        for (int i = 0; i < grado; i++) {
+        //Hallando el resultado.
+        int filasIniciales = matrix.size();
+        int columnasIniciales = matrix.get(0).size();
+        
+        for (int columnas = 0; columnas < columnasIniciales; columnas++) {
             resultado.add(new ArrayList<Double>());
-            for (int j = 0; j < matrix.get(0).size(); j++) {  
-                resultado.get(i).add(matrix.get(j).get(i));
+            for (int filas = 0; filas < filasIniciales; filas++) {
+                resultado.get(columnas).add(matrix.get(filas).get(columnas));
             }
         }
         
-        for (int i = 0; i < grado; i++) {
-            matrix.set(i, resultado.get(i));
+        //Almacenando el resultado en la matriz original.
+        matrix = new ArrayList<>();
+        for (int filas = 0; filas < columnasIniciales; filas++) {
+            matrix.add(new ArrayList());
+            for (int columnas = 0; columnas < filasIniciales; columnas++) {
+                matrix.get(filas).add(resultado.get(filas).get(columnas));
+            }
         }
         
         return matrix;
