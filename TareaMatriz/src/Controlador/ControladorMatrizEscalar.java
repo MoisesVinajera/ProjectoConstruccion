@@ -33,14 +33,8 @@ public class ControladorMatrizEscalar implements ActionListener{
     
     public void actionPerformed(ActionEvent e) {
         if(vistaMatrizEscalar.getjButtonAplicar()== e.getSource()){
-            columnas = Integer.parseInt(vistaMatrizEscalar.getjTextColumnas().getText());
-            filas = Integer.parseInt(vistaMatrizEscalar.getjTextFilas().getText());
-            escalar = Double.parseDouble(vistaMatrizEscalar.getjTextEscalar().getText());
-
-            DefaultTableModel model = new DefaultTableModel(filas, columnas);
-            vistaMatrizEscalar.getjTable1().setShowGrid(true);
-            vistaMatrizEscalar.getjTable1().getTableHeader().setUI(null);
-            vistaMatrizEscalar.getjTable1().setModel(model);
+            takeValues();
+            showTable();
 
             vistaMatrizEscalar.getjLabelNotificacion().setText("Importante rellenar la matriz!");
             vistaMatrizEscalar.getjButtonAceptar().setVisible(true);
@@ -71,5 +65,18 @@ public class ControladorMatrizEscalar implements ActionListener{
 
         }
         return matriz;
+    }
+    
+    private void takeValues(){
+            columnas = Integer.parseInt(vistaMatrizEscalar.getjTextColumnas().getText());
+            filas = Integer.parseInt(vistaMatrizEscalar.getjTextFilas().getText());
+            escalar = Double.parseDouble(vistaMatrizEscalar.getjTextEscalar().getText());
+    }
+    
+    private void showTable(){
+            DefaultTableModel model = new DefaultTableModel(filas, columnas);
+            vistaMatrizEscalar.getjTable1().setShowGrid(true);
+            vistaMatrizEscalar.getjTable1().getTableHeader().setUI(null);
+            vistaMatrizEscalar.getjTable1().setModel(model);
     }
 }
