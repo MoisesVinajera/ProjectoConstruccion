@@ -21,10 +21,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControladorMatrizDoble implements ActionListener{
     private MatrizDoble vistaMatrizDoble;
-    private int MatrizAcolumnas;
-    private int MatrizAfilas;
-    private int MatrizBcolumnas;
-    private int MatrizBfilas;
+    private int matrizAcolumnas;
+    private int matrizAfilas;
+    private int matrizBcolumnas;
+    private int matrizBfilas;
     private String tipo;
     
     public ControladorMatrizDoble(String tipo){
@@ -46,9 +46,12 @@ public class ControladorMatrizDoble implements ActionListener{
             vistaMatrizDoble.getjButtonAceptar().setVisible(true);
         }
         if(vistaMatrizDoble.getjButtonAceptar()== e.getSource()){
-            ArrayList<ArrayList<Double>> matriz = formMatrix(vistaMatrizDoble.getjTable1());
-            ArrayList<ArrayList<Double>> matriz2 = formMatrix(vistaMatrizDoble.getjTable2());
+            ArrayList<ArrayList<Double>> matriz = formMatrix(matrizAfilas, matrizAcolumnas, vistaMatrizDoble.getjTable1());
+            ArrayList<ArrayList<Double>> matriz2 = formMatrix(matrizBfilas, matrizBcolumnas, vistaMatrizDoble.getjTable2());
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
+            
+            System.out.println(matriz.size());
+            System.out.println(matriz2.size());
             
             if(this.tipo.equals("Multiplicacion Matricial")){
                 matrizFinal = new MultMatricial().matrixMultiplication(matriz, matriz2);
@@ -62,12 +65,12 @@ public class ControladorMatrizDoble implements ActionListener{
         }
     }   
     
-    private ArrayList<ArrayList<Double>> formMatrix(JTable table){
+    private ArrayList<ArrayList<Double>> formMatrix(int filas, int columnas, JTable table){
         ArrayList<ArrayList<Double>> matrix = new ArrayList();
         try{
-            for (int i = 0; i < MatrizBfilas; i++) {
+            for (int i = 0; i < filas; i++) {
                 ArrayList<Double> fila = new ArrayList();
-                for (int j = 0; j < MatrizBcolumnas; j++) {
+                for (int j = 0; j < columnas; j++) {
                     Double numero = Double.parseDouble(table.getModel().getValueAt(i, j).toString());
 
                     fila.add(numero);
@@ -81,20 +84,20 @@ public class ControladorMatrizDoble implements ActionListener{
     }
     
     private void takeValues(){
-            this.MatrizAcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Columna().getText());
-            this.MatrizAfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Fila().getText());
-            this.MatrizBcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Columna().getText());
-            this.MatrizBfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Fila().getText());
+            this.matrizAcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Columna().getText());
+            this.matrizAfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Fila().getText());
+            this.matrizBcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Columna().getText());
+            this.matrizBfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Fila().getText());
     }
     
     private void showTableA(){
-            DefaultTableModel model = new DefaultTableModel(this.MatrizAfilas, this.MatrizAcolumnas);
+            DefaultTableModel model = new DefaultTableModel(this.matrizAfilas, this.matrizAcolumnas);
             vistaMatrizDoble.getjTable1().setShowGrid(true);
             vistaMatrizDoble.getjTable1().getTableHeader().setUI(null);
             vistaMatrizDoble.getjTable1().setModel(model);
     }
     private void showTableB(){
-            DefaultTableModel model2 = new DefaultTableModel(this.MatrizBfilas, this.MatrizBcolumnas);
+            DefaultTableModel model2 = new DefaultTableModel(this.matrizBfilas, this.matrizBcolumnas);
             vistaMatrizDoble.getjTable2().setShowGrid(true);
             vistaMatrizDoble.getjTable2().getTableHeader().setUI(null);
             vistaMatrizDoble.getjTable2().setModel(model2);

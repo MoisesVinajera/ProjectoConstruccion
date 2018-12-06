@@ -29,10 +29,17 @@ public class MultMatricial {
         //n(f1, f2, f3) = 4 + 4 +3 -3 +1
         ArrayList<ArrayList<Double>> resultado = new ArrayList<>();
         
-        for (int i = 0; i < matrizA.get(0).size(); i++) {
+        int columnasA = matrizA.get(0).size();
+        double acumuladorSuma = 0;
+        for (int filasA = 0; filasA < matrizA.size(); filasA++) {
             resultado.add(new ArrayList<Double>());
-            for (int j = 0; j < matrizB.size(); j++) {
-                resultado.get(i).add(matrizA.get(i).get(j)*matrizB.get(j).get(i));
+            for (int columnasB = 0; columnasB < matrizB.get(0).size(); columnasB++) {
+                for(int filasB = 0; filasB < columnasA; filasB++){
+                    acumuladorSuma += (matrizA.get(filasA).get(filasB)*matrizB.get(filasB).get(columnasB));
+                    System.out.println("i: " + filasA + "\tj: " + columnasB + "\tk: " + filasB);
+                }
+                resultado.get(filasA).add(acumuladorSuma);
+                acumuladorSuma = 0;
             }
         }
         
