@@ -61,30 +61,6 @@ public class Utilidades {
     
     /**
      *
-     * @return
-     */
-    public static int inputToPostiveInt(){
-        Scanner scanner = new Scanner(System.in);
-        boolean numeroValido = false;
-        int entero = 0;
-        
-        while (!numeroValido){
-            try{
-                entero = Integer.valueOf(scanner.nextLine());
-                numeroValido = true;
-                if(entero <= 0){
-                    System.out.println("Numero fuera de rango, ingréselo de nuevo:");
-                    numeroValido = false;
-                }
-            }catch(NumberFormatException e){
-                System.out.println("Formato de número inválido. Ingréselo de nuevo:");
-            }
-        }
-        return entero;
-    }
-    
-    /**
-     *
      * @param input
      * @return
      */
@@ -124,7 +100,7 @@ public class Utilidades {
      * @param stringMatrix
      * @return
      */
-    public static ArrayList<ArrayList<Double>>changeStringMatrixToDoubleMatrix(ArrayList<ArrayList<String>> stringMatrix){
+    public static ArrayList<ArrayList<Double>>stringToDoubleMatrix(ArrayList<ArrayList<String>> stringMatrix){
         ArrayList<ArrayList<Double>> doubleMatrix = new ArrayList<>();
         
         int filas = stringMatrix.size();
@@ -189,7 +165,7 @@ public class Utilidades {
      * @param matrizB
      * @return
      */
-    public static boolean areDiferentSizeColumnARowB(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
+    public static boolean diferentSizeColARowB(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
         return matrizA.get(0).size() != matrizB.size();
     }
     
@@ -199,7 +175,7 @@ public class Utilidades {
      * @param matrixB
      * @return
      */
-    public static boolean diferentSizeMatriz(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
+    public static boolean diferentSizeMatrix(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
         return matrixA.size() != matrixB.size() || matrixA.get(0).size() != matrixB.get(0).size();
     }
     

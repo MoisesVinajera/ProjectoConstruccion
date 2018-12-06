@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MultMatricial {
 
     public ArrayList<ArrayList<Double>> matrixMultiplication(ArrayList<ArrayList<Double>> matrizA, ArrayList<ArrayList<Double>> matrizB){
-        if(Utilidades.areDiferentSizeColumnARowB(matrizA,matrizB)){
+        if(Utilidades.diferentSizeColARowB(matrizA,matrizB)){
             throw new NumberFormatException("Multiplicación imposible, los tamaños no coinciden.");
         }
 

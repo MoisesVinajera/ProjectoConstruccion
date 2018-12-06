@@ -21,7 +21,7 @@ public class Sumador {
      */
     public ArrayList<ArrayList<Double>> sumarMatrices(ArrayList<ArrayList<Double>> matrixA, ArrayList<ArrayList<Double>> matrixB){
 
-        if(Utilidades.diferentSizeMatriz(matrixA,matrixB)){
+        if(Utilidades.diferentSizeMatrix(matrixA,matrixB)){
             throw new NumberFormatException("Las matrices son de distinto tamaño.");
         }
         
@@ -71,7 +71,5 @@ public class Sumador {
         
         return result;
     }
-    
-
 }
 

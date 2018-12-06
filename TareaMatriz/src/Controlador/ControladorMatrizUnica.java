@@ -9,10 +9,7 @@ import Modelo.Determinante;
 import Modelo.Inversor;
 import Modelo.Solucionador;
 import Modelo.Trasponedor;
-import Vista.MatrizDoble;
-import Vista.MatrizEscalar;
 import Vista.MatrizUnica;
-import Vista.Menu;
 import Vista.ResultadoMatriz;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,10 +21,10 @@ import javax.swing.table.DefaultTableModel;
  * @author Moises
  */
 public class ControladorMatrizUnica implements ActionListener{
-    private MatrizUnica vistaMatrizUnica;
+    private final MatrizUnica vistaMatrizUnica;
     private int filas;
     private int columnas;
-    private String tipo;
+    private final String tipo;
 
         
     public ControladorMatrizUnica(String tipo){
@@ -54,19 +51,23 @@ public class ControladorMatrizUnica implements ActionListener{
             ResultadoMatriz resultado;
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
             
-            if(this.tipo.equals("Obtener Inversa")){
-                matrizFinal = new Inversor().invertMatrix(matriz);  
-            }
-            else if(this.tipo.equals("Obtener Transpuesta")){               
-                matrizFinal = new Trasponedor().trasposeMatrix(matriz);  
-            }
-            else if(this.tipo.equals("Obtener Determinante")){
-                ArrayList<Double> placeHolder = new ArrayList();
-                placeHolder.add(new Determinante().calculateDeterminant(matriz));
-                matrizFinal.add(placeHolder);
-            }
-            else if(this.tipo.equals("Solucionar Sistema")){
-                matrizFinal = new Solucionador().solucionar(matriz);
+            switch (this.tipo) {
+                case "Obtener Inversa":
+                    matrizFinal = new Inversor().invertMatrix(matriz);
+                    break;
+                case "Obtener Transpuesta":
+                    matrizFinal = new Trasponedor().trasposeMatrix(matriz);
+                    break;
+                case "Obtener Determinante":
+                    ArrayList<Double> placeHolder = new ArrayList();
+                    placeHolder.add(new Determinante().calculateDeterminant(matriz));
+                    matrizFinal.add(placeHolder);
+                    break;
+                case "Solucionar Sistema":
+                    matrizFinal = new Solucionador().solucionar(matriz);
+                    break;
+                default:
+                    break;
             }
             
             resultado = new ResultadoMatriz(matrizFinal);

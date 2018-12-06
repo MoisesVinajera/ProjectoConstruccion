@@ -20,12 +20,12 @@ import javax.swing.table.DefaultTableModel;
  * @author Moises
  */
 public class ControladorMatrizDoble implements ActionListener{
-    private MatrizDoble vistaMatrizDoble;
+    private final MatrizDoble vistaMatrizDoble;
     private int matrizAcolumnas;
     private int matrizAfilas;
     private int matrizBcolumnas;
     private int matrizBfilas;
-    private String tipo;
+    private final String tipo;
     
     public ControladorMatrizDoble(String tipo){
         vistaMatrizDoble = new MatrizDoble();

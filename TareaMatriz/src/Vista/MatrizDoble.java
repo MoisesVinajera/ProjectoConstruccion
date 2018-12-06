@@ -5,15 +5,11 @@
  */
 package Vista;
 
-import Modelo.MultMatricial;
-import Modelo.Sumador;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
