@@ -86,9 +86,9 @@ public class MatrizDoble extends javax.swing.JFrame {
 
         jLabel2.setText("Numero Filas:");
 
-        jLabel3.setText("Numero de Columnas:");
+        jLabel3.setText("Numero de Filas:");
 
-        jLabel4.setText("Numero de Filas:");
+        jLabel4.setText("Numero de Columas:");
 
         jLabel5.setText("MATRIZ 1");
 
@@ -130,7 +130,7 @@ public class MatrizDoble extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jTextMatriz1Columna, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,8 +142,9 @@ public class MatrizDoble extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(jTextMatriz2Columna, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextMatriz2Columna, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(11, 11, 11)))
                                 .addGap(89, 89, 89))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
