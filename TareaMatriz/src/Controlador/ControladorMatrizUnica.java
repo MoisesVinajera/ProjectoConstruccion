@@ -85,12 +85,12 @@ public class ControladorMatrizUnica implements ActionListener{
         ArrayList<ArrayList<Double>> matriz = new ArrayList();
         try{
             for (int i = 0; i < filas; i++) {
-                ArrayList<Double> numeros = new ArrayList();
+                ArrayList<Double> fila = new ArrayList();
                 for (int j = 0; j < columnas; j++) {
                     Double numero = Double.parseDouble(vistaMatrizUnica.getjTable1().getModel().getValueAt(i, j).toString());
-                    numeros.add(numero);
+                    fila.add(numero);
                 }
-                matriz.add(numeros);
+                matriz.add(fila);
             } 
         }catch(NullPointerException exception){
 

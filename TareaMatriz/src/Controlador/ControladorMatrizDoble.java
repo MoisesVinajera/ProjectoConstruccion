@@ -77,14 +77,13 @@ public class ControladorMatrizDoble implements ActionListener{
         ArrayList<ArrayList<Double>> matrix = new ArrayList();
         try{
             for (int i = 0; i < MatrizBfilas; i++) {
-                ArrayList<Double> numeros = new ArrayList();
+                ArrayList<Double> fila = new ArrayList();
                 for (int j = 0; j < MatrizBcolumnas; j++) {
-                    System.out.println(i + "   " + j);
                     Double numero = Double.parseDouble(table.getModel().getValueAt(i, j).toString());
 
-                    numeros.add(numero);
+                    fila.add(numero);
                 }
-                matrix.add(numeros);
+                matrix.add(fila);
             }
         }catch(Exception exception){
             System.out.println(exception.getMessage());
