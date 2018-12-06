@@ -36,22 +36,20 @@ public class ControladorMatrizUnica implements ActionListener{
         vistaMatrizUnica.setVisible(true);
         this.vistaMatrizUnica.getjButtonAplicar().addActionListener(this);
         this.vistaMatrizUnica.getjButtonAceptar().addActionListener(this);
-        
-        
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         if(vistaMatrizUnica.getjButtonAplicar()== e.getSource()){
-            takeValues();
+            
+            takeValuesWindow();
             showTable();
-
             vistaMatrizUnica.getjLabelNotificacion().setText("Importante rellenar la matriz!");
             vistaMatrizUnica.getjButtonAceptar().setVisible(true);
-
-
+            
             }
         if(vistaMatrizUnica.getjButtonAceptar()== e.getSource()){
+            
             ArrayList<ArrayList<Double>> matriz = formMatrix();
             ResultadoMatriz resultado;
             ArrayList<ArrayList<Double>> matrizFinal = new ArrayList();
@@ -92,7 +90,7 @@ public class ControladorMatrizUnica implements ActionListener{
         }
         return matriz;
     }
-    private void takeValues(){
+    private void takeValuesWindow(){
         columnas = Integer.parseInt(vistaMatrizUnica.getjTextColumnas().getText());
         filas = Integer.parseInt(vistaMatrizUnica.getjTextFilas().getText());
     }

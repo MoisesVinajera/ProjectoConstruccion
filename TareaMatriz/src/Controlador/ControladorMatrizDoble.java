@@ -38,7 +38,7 @@ public class ControladorMatrizDoble implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(vistaMatrizDoble.getjButtonAplicar()== e.getSource()){
-            takeValues();
+            takeValuesWindow();
             showTableA();
             showTableB();
 
@@ -83,7 +83,7 @@ public class ControladorMatrizDoble implements ActionListener{
         return matrix;
     }
     
-    private void takeValues(){
+    private void takeValuesWindow(){
             this.matrizAcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Columna().getText());
             this.matrizAfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Fila().getText());
             this.matrizBcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Columna().getText());

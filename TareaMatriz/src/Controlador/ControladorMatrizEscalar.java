@@ -33,7 +33,7 @@ public class ControladorMatrizEscalar implements ActionListener{
     
     public void actionPerformed(ActionEvent e) {
         if(vistaMatrizEscalar.getjButtonAplicar()== e.getSource()){
-            takeValues();
+            takeValuesWindow();
             showTable();
 
             vistaMatrizEscalar.getjLabelNotificacion().setText("Importante rellenar la matriz!");
@@ -67,7 +67,7 @@ public class ControladorMatrizEscalar implements ActionListener{
         return matriz;
     }
     
-    private void takeValues(){
+    private void takeValuesWindow(){
             columnas = Integer.parseInt(vistaMatrizEscalar.getjTextColumnas().getText());
             filas = Integer.parseInt(vistaMatrizEscalar.getjTextFilas().getText());
             escalar = Double.parseDouble(vistaMatrizEscalar.getjTextEscalar().getText());
