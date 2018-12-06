@@ -38,20 +38,9 @@ public class ControladorMatrizDoble implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(vistaMatrizDoble.getjButtonAplicar()== e.getSource()){
-            this.MatrizAcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Columna().getText());
-            this.MatrizAfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Fila().getText());
-            this.MatrizBcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Columna().getText());
-            this.MatrizBfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Fila().getText());
-
-            DefaultTableModel model = new DefaultTableModel(this.MatrizAfilas, this.MatrizAcolumnas);
-            vistaMatrizDoble.getjTable1().setShowGrid(true);
-            vistaMatrizDoble.getjTable1().getTableHeader().setUI(null);
-            vistaMatrizDoble.getjTable1().setModel(model);
-
-            DefaultTableModel model2 = new DefaultTableModel(this.MatrizBfilas, this.MatrizBcolumnas);
-            vistaMatrizDoble.getjTable2().setShowGrid(true);
-            vistaMatrizDoble.getjTable2().getTableHeader().setUI(null);
-            vistaMatrizDoble.getjTable2().setModel(model2);
+            takeValues();
+            showTableA();
+            showTableB();
 
             vistaMatrizDoble.getjLabelNotificacion().setText("Importante rellenar la matriz!");
             vistaMatrizDoble.getjButtonAceptar().setVisible(true);
@@ -89,5 +78,25 @@ public class ControladorMatrizDoble implements ActionListener{
             System.out.println(exception.getMessage());
         }
         return matrix;
+    }
+    
+    private void takeValues(){
+            this.MatrizAcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Columna().getText());
+            this.MatrizAfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz1Fila().getText());
+            this.MatrizBcolumnas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Columna().getText());
+            this.MatrizBfilas = Integer.parseInt(vistaMatrizDoble.getjTextMatriz2Fila().getText());
+    }
+    
+    private void showTableA(){
+            DefaultTableModel model = new DefaultTableModel(this.MatrizAfilas, this.MatrizAcolumnas);
+            vistaMatrizDoble.getjTable1().setShowGrid(true);
+            vistaMatrizDoble.getjTable1().getTableHeader().setUI(null);
+            vistaMatrizDoble.getjTable1().setModel(model);
+    }
+    private void showTableB(){
+            DefaultTableModel model2 = new DefaultTableModel(this.MatrizBfilas, this.MatrizBcolumnas);
+            vistaMatrizDoble.getjTable2().setShowGrid(true);
+            vistaMatrizDoble.getjTable2().getTableHeader().setUI(null);
+            vistaMatrizDoble.getjTable2().setModel(model2);
     }
 }
