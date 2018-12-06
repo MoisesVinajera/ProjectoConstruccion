@@ -30,10 +30,13 @@ public class Determinante {
         ArrayList<ArrayList<Double>> cofactores = new ArrayList<>();
         double resultado = 0;
         
+        //Se agregan cofactores.
         for (int k = 0; k < grado; k++) {
             for (int i = 1; i < grado; i++) {
+                //Se añade fila de cofactores.
                 cofactores.add(new ArrayList<>());
                 for (int j = 0; j < grado; j++) {
+                    //Se evita la fila y columna del pivote.
                     if (j!=k){
                         cofactores.get(i-1).add(matrix.get(i).get(j));
                     }

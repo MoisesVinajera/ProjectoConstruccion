@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -24,7 +25,7 @@ public class Inversor {
     }
     
     private ArrayList<ArrayList<Double>> concatenateIdentity(ArrayList<ArrayList<Double>> matrix){
-        //Matrix identidad
+        //Matriz identidad
         int grado = matrix.size();
         
         for (int i = 0; i < grado; i++) {
