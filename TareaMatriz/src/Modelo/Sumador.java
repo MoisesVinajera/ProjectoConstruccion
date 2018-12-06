@@ -37,8 +37,8 @@ public class Sumador {
         
         ArrayList<Double> result = new ArrayList<>();
         
-        for (int i = 0; i < row.size(); i++) {
-            result.add(row.get(i)+adding.get(i));
+        for (int columna = 0; columna < row.size(); columna++) {
+            result.add(row.get(columna)+adding.get(columna));
         }
         
         return result;
@@ -51,8 +51,8 @@ public class Sumador {
         
         ArrayList<Double> result = new ArrayList<>();
         
-        for (int i = 0; i < row.size(); i++) {
-            result.add(row.get(i)-substracting.get(i));
+        for (int columna = 0; columna < row.size(); columna++) {
+            result.add(row.get(columna)-substracting.get(columna));
         }
         
         return result;

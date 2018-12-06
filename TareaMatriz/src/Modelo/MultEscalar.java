@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class MultEscalar {
     
     public ArrayList<ArrayList<Double>> multiplyMatrixByScalar(ArrayList<ArrayList<Double>> matrix, double escalar){        
-        for (int i = 0; i < matrix.size(); i++) {
-            matrix.set(i, MultEscalar.multiplyRowByScalar(matrix.get(i), escalar));
+        for (int fila = 0; fila < matrix.size(); fila++) {
+            matrix.set(fila, MultEscalar.multiplyRowByScalar(matrix.get(fila), escalar));
         }
         
         return matrix;
@@ -19,8 +19,8 @@ public class MultEscalar {
     public static ArrayList<Double> multiplyRowByScalar(ArrayList<Double> row, double escalar){
         ArrayList<Double> result = new ArrayList<>();
         
-        for (int i = 0; i < row.size(); i++) {
-            result.add(row.get(i)*escalar);
+        for (int columna = 0; columna < row.size(); columna++) {
+            result.add(row.get(columna)*escalar);
         }
         
         return result;

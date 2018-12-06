@@ -16,10 +16,10 @@ public class Solucionador {
         ArrayList<ArrayList<Double>> copia = new ArrayList<>();
         
         //Inicializando copia.
-        for (int i = 0; i < matrix.size(); i++) {
+        for (int fila = 0; fila < matrix.size(); fila++) {
             copia.add(new ArrayList<>());
-            for (int j = 0; j < matrix.get(i).size() - 1; j++) {
-                copia.get(i).add(matrix.get(i).get(j));
+            for (int columna = 0; columna < matrix.get(fila).size() - 1; columna++) {
+                copia.get(fila).add(matrix.get(fila).get(columna));
             }
         }
         
@@ -37,18 +37,18 @@ public class Solucionador {
         //Se hallan las soluciones.
         int grado = matrix.size();
         
-        for (int i = 0; i < grado; i++) {
-            for (int j = 0; j < grado; j++) {
+        for (int filaPivote = 0; filaPivote < grado; filaPivote++) {
+            for (int columnas = 0; columnas < grado; columnas++) {
                 //Normalización
-                double pivote = matrix.get(i).get(i);
-                matrix.set(i, MultEscalar.multiplyRowByScalar(matrix.get(i), 1/pivote));
+                double pivote = matrix.get(filaPivote).get(filaPivote);
+                matrix.set(filaPivote, MultEscalar.multiplyRowByScalar(matrix.get(filaPivote), 1/pivote));
                 
                 //Resta de filas
-                for (int k = 0; k < grado; k++) {
-                    if(k!=i){
+                for (int filas = 0; filas < grado; filas++) {
+                    if(filas!=filaPivote){
                         ArrayList<Double> auxRow;
-                        auxRow = MultEscalar.multiplyRowByScalar(matrix.get(i), matrix.get(k).get(i));
-                        matrix.set(k, Sumador.subRows(matrix.get(k), auxRow));
+                        auxRow = MultEscalar.multiplyRowByScalar(matrix.get(filaPivote), matrix.get(filas).get(filaPivote));
+                        matrix.set(filas, Sumador.subRows(matrix.get(filas), auxRow));
                     }
                 }
             }

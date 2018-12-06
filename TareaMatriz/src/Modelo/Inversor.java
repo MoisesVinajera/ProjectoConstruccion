@@ -1,7 +1,6 @@
 package Modelo;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  *
@@ -28,12 +27,12 @@ public class Inversor {
         //Matriz identidad
         int grado = matrix.size();
         
-        for (int i = 0; i < grado; i++) {
-            for (int j = 0; j < grado; j++) {
-                if(i == j){
-                    matrix.get(i).add(1.0);
+        for (int fila = 0; fila < grado; fila++) {
+            for (int columna = 0; columna < grado; columna++) {
+                if(fila == columna){
+                    matrix.get(fila).add(1.0);
                 }else{
-                    matrix.get(i).add(0.0);
+                    matrix.get(fila).add(0.0);
                 }
             }
         }
@@ -44,18 +43,18 @@ public class Inversor {
     private ArrayList<ArrayList<Double>> invert(ArrayList<ArrayList<Double>> matrix){
         int grado = matrix.size();
         
-        for (int i = 0; i < grado; i++) {
-            for (int j = 0; j < grado; j++) {
+        for (int filaPivote = 0; filaPivote < grado; filaPivote++) {
+            for (int columnas = 0; columnas < grado; columnas++) {
                 //Normalización
-                double pivote = matrix.get(i).get(i);
-                matrix.set(i, MultEscalar.multiplyRowByScalar(matrix.get(i), 1/pivote));
+                double pivote = matrix.get(filaPivote).get(filaPivote);
+                matrix.set(filaPivote, MultEscalar.multiplyRowByScalar(matrix.get(filaPivote), 1/pivote));
                 
                 //Resta de filas
-                for (int k = 0; k < grado; k++) {
-                    if(k!=i){
+                for (int filas = 0; filas < grado; filas++) {
+                    if(filas!=filaPivote){
                         ArrayList<Double> auxRow;
-                        auxRow = MultEscalar.multiplyRowByScalar(matrix.get(i), matrix.get(k).get(i));
-                        matrix.set(k, Sumador.subRows(matrix.get(k), auxRow));
+                        auxRow = MultEscalar.multiplyRowByScalar(matrix.get(filaPivote), matrix.get(filas).get(filaPivote));
+                        matrix.set(filas, Sumador.subRows(matrix.get(filas), auxRow));
                     }
                 }
             }
@@ -67,9 +66,9 @@ public class Inversor {
         int grado = matrix.size();
         
         //Retirar la matriz original y conservar la inversa.
-        for (int i = 0; i < grado; i++) {
-            for (int j = 0; j < grado; j++) {
-                matrix.get(i).remove(0);
+        for (int fila = 0; fila < grado; fila++) {
+            for (int columnas = 0; columnas < grado; columnas++) {
+                matrix.get(fila).remove(0);
             }
         }
         

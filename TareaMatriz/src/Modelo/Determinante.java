@@ -31,21 +31,20 @@ public class Determinante {
         double resultado = 0;
         
         //Se agregan cofactores.
-        for (int k = 0; k < grado; k++) {
-            for (int i = 1; i < grado; i++) {
+        for (int columnaPivote = 0; columnaPivote < grado; columnaPivote++) {
+            for (int fila = 1; fila < grado; fila++) {
                 //Se añade fila de cofactores.
                 cofactores.add(new ArrayList<>());
-                for (int j = 0; j < grado; j++) {
+                for (int columna = 0; columna < grado; columna++) {
                     //Se evita la fila y columna del pivote.
-                    if (j!=k){
-                        cofactores.get(i-1).add(matrix.get(i).get(j));
+                    if (columna != columnaPivote){
+                        cofactores.get(fila-1).add(matrix.get(fila).get(columna));
                     }
                 }
             }
-            resultado += matrix.get(0).get(k)*Math.pow(-1, k)*calculateDeterminant(cofactores);
+            resultado += matrix.get(0).get(columnaPivote)*Math.pow(-1, columnaPivote)*calculateDeterminant(cofactores);
             cofactores = new ArrayList<>();
         }     
         return resultado;
     }
-    
 }

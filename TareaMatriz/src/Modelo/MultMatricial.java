@@ -31,6 +31,7 @@ public class MultMatricial {
         
         int columnasA = matrizA.get(0).size();
         double acumuladorSuma = 0;
+        
         for (int filasA = 0; filasA < matrizA.size(); filasA++) {
             resultado.add(new ArrayList<Double>());
             for (int columnasB = 0; columnasB < matrizB.get(0).size(); columnasB++) {
@@ -42,7 +43,6 @@ public class MultMatricial {
                 acumuladorSuma = 0;
             }
         }
-        
         return resultado;
     }
     
