@@ -21,7 +21,7 @@ public class Trasponedor {
         int columnasIniciales = matrix.get(0).size();
         
         for (int columnas = 0; columnas < columnasIniciales; columnas++) {
-            resultado.add(new ArrayList<Double>());
+            resultado.add(new ArrayList<>());
             for (int filas = 0; filas < filasIniciales; filas++) {
                 resultado.get(columnas).add(matrix.get(filas).get(columnas));
             }

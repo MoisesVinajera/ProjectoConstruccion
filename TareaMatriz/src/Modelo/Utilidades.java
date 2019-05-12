@@ -65,7 +65,7 @@ public class Utilidades {
      * @return
      */
     public static boolean checkDouble(String input){
-        boolean numeroValido = false;
+        boolean numeroValido;
         double doble = 0;
         
         try{

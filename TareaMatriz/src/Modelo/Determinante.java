@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -22,10 +22,12 @@ public class Determinante {
         if(!Utilidades.isSquaredDoubleMatrix(matrix)){
             throw new NumberFormatException("La matriz no es cuadrada.");
         }
+        
         int grado = matrix.size();
         if(grado == 1){
             return matrix.get(0).get(0);
         }
+        
         ArrayList<ArrayList<Double>> cofactores = new ArrayList<>();
         double resultado = 0;
         

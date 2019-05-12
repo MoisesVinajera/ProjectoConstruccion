@@ -24,7 +24,7 @@ public class MultMatricial {
         double acumuladorSuma = 0;
         
         for (int filasA = 0; filasA < matrizA.size(); filasA++) {
-            resultado.add(new ArrayList<Double>());
+            resultado.add(new ArrayList<>());
             for (int columnasB = 0; columnasB < matrizB.get(0).size(); columnasB++) {
                 for(int filasB = 0; filasB < columnasA; filasB++){
                     acumuladorSuma += (matrizA.get(filasA).get(filasB)*matrizB.get(filasB).get(columnasB));
